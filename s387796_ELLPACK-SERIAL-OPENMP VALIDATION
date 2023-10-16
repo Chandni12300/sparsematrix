@@ -1,0 +1,2086 @@
+Last login: Sat Feb 25 22:30:28 on ttys002
+(base) chandnisaha@rn-dynamic-217-060 ~ % ssh -x s387796@crescent.central.cranfield.ac.uk
+
+
++-----------------------------------------------------------------+
+| This system is for the use of authorised users only.            |
+| Individuals using this computer system without authority, or in |
+| excess of their authority, are subject to having all of their   |
+| activities on this system monitored and recorded by system      |
+| personnel.                                                      |
+|                                                                 |
+| In the course of monitoring individuals improperly using this   |
+| system, or in the course of system maintenance, the activities  |
+| of authorised users may also be monitored.                      |
+|                                                                 |
+| Anyone using this system expressly consents to such monitoring  |
+| and is advised that if such monitoring reveals possible         |
+| evidence of criminal activity, system personnel may provide the |
+| evidence of such monitoring to law enforcement officials.       |
++-----------------------------------------------------------------+
+                                                     __      
+                                                    /\ \__   
+       ___   _ __    __    ____    ___     __    ___\ \ ,_\  
+      /'___\/\`'__\/'__`\ /',__\  /'___\ /'__`\/' _ `\ \ \/  
+     /\ \__/\ \ \//\  __//\__, `\/\ \__//\  __//\ \/\ \ \ \_ 
+     \ \____\\ \_\\ \____\/\____/\ \____\ \____\ \_\ \_\ \__\
+      \/____/ \/_/ \/____/\/___/  \/____/\/____/\/_/\/_/\/__/
+                                                        
+                                                                                                          
+	     YOU ARE NOW LOGGED INTO crescent-login2
+
+s387796@crescent.central.cranfield.ac.uk's password: 
+Last login: Sat Feb 25 22:42:39 2023 from rn-dynamic-217-060.wless.cranfield.ac.uk
+*********************************************************************
+************** Your current disk usage is given below ***************
+      user/group     ||           size          ||    chunk files    
+     name     |  id  ||    used    |    hard    ||  used   |  hard   
+--------------|------||------------|------------||---------|---------
+       s387796|715229||    3.54 GiB|   50.00 GiB||      764|unlimited
+*********************************************************************
+
+This cluster contains Intel(R) Xeon(R) Cluster Nodes
+[s387796@crescent-login2 ~]$ module load fosscuda/2019b
+[s387796@crescent-login2 ~]$ gcc --version 
+gcc (GCC) 8.3.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[s387796@crescent-login2 ~]$ export CC=$8.3.0
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenopenmp -O1 -o openmpellpack5 openmpellpack5.c
+gcc: error: unrecognized command line option ‘-fopenopenmp’; did you mean ‘-fopenmp’?
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./fopenmp.c
+-bash: ./fopenmp.c: No such file or directory
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.173248 seconds
+FLOPS Serial:746738224.97
+Elapsed time for OpenMP Parallel: 0.057231 seconds
+FLOPS OpenMP Parallel:2260519822.49
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.164498 seconds
+FLOPS Serial:786458826.25
+Elapsed time for OpenMP Parallel: 0.047174 seconds
+FLOPS OpenMP Parallel:2742444370.35
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.163660 seconds
+FLOPS Serial:790485787.61
+Elapsed time for OpenMP Parallel: 0.053097 seconds
+FLOPS OpenMP Parallel:2436508530.73
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.160448 seconds
+FLOPS Serial:806310480.65
+Elapsed time for OpenMP Parallel: 0.051039 seconds
+FLOPS OpenMP Parallel:2534769874.97
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.163170 seconds
+FLOPS Serial:792859618.80
+Elapsed time for OpenMP Parallel: 0.045715 seconds
+FLOPS OpenMP Parallel:2829968088.13
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.170868 seconds
+FLOPS Serial:757139452.68
+Elapsed time for OpenMP Parallel: 0.048770 seconds
+FLOPS OpenMP Parallel:2652666195.50
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.163256 seconds
+FLOPS Serial:792441956.19
+Elapsed time for OpenMP Parallel: 0.053195 seconds
+FLOPS OpenMP Parallel:2431996912.53
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.160590 seconds
+FLOPS Serial:805597509.18
+Elapsed time for OpenMP Parallel: 0.047499 seconds
+FLOPS OpenMP Parallel:2723677636.37
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.164085 seconds
+FLOPS Serial:788438333.79
+Elapsed time for OpenMP Parallel: 0.052571 seconds
+FLOPS OpenMP Parallel:2460899895.80
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000698 seconds
+FLOPS Serial:1234212034.38
+Elapsed time for OpenMP Parallel: 0.005608 seconds
+FLOPS OpenMP Parallel:153626190.75
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000936 seconds
+FLOPS Serial:920384615.38
+Elapsed time for OpenMP Parallel: 0.006220 seconds
+FLOPS OpenMP Parallel:138503705.29
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000803 seconds
+FLOPS Serial:1072826899.13
+Elapsed time for OpenMP Parallel: 0.005584 seconds
+FLOPS OpenMP Parallel:154276564.64
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000840 seconds
+FLOPS Serial:1025571428.57
+Elapsed time for OpenMP Parallel: 0.005713 seconds
+FLOPS OpenMP Parallel:150784768.63
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000762 seconds
+FLOPS Serial:1130551181.10
+Elapsed time for OpenMP Parallel: 0.005788 seconds
+FLOPS OpenMP Parallel:148843519.92
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000837 seconds
+FLOPS Serial:1029247311.83
+Elapsed time for OpenMP Parallel: 0.003170 seconds
+FLOPS OpenMP Parallel:271740499.67
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000663 seconds
+FLOPS Serial:1299366515.84
+Elapsed time for OpenMP Parallel: 0.005238 seconds
+FLOPS OpenMP Parallel:164476761.04
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000628 seconds
+FLOPS Serial:1371783439.49
+Elapsed time for OpenMP Parallel: 0.005333 seconds
+FLOPS OpenMP Parallel:161532296.96
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.001137 seconds
+FLOPS Serial:757678100.26
+Elapsed time for OpenMP Parallel: 0.005461 seconds
+FLOPS OpenMP Parallel:157753267.35
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000015 seconds
+FLOPS Serial:1141600000.00
+Elapsed time for OpenMP Parallel: 0.007975 seconds
+FLOPS OpenMP Parallel:2147148.86
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000018 seconds
+FLOPS Serial:951333333.33
+Elapsed time for OpenMP Parallel: 0.004654 seconds
+FLOPS OpenMP Parallel:3679518.97
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000016 seconds
+FLOPS Serial:1070250000.00
+Elapsed time for OpenMP Parallel: 0.005090 seconds
+FLOPS OpenMP Parallel:3364235.54
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000016 seconds
+FLOPS Serial:1070250000.00
+Elapsed time for OpenMP Parallel: 0.005031 seconds
+FLOPS OpenMP Parallel:3404014.74
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000015 seconds
+FLOPS Serial:1141600000.00
+Elapsed time for OpenMP Parallel: 0.005103 seconds
+FLOPS OpenMP Parallel:3355796.56
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000015 seconds
+FLOPS Serial:1141600000.00
+Elapsed time for OpenMP Parallel: 0.004834 seconds
+FLOPS OpenMP Parallel:3542212.07
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000031 seconds
+FLOPS Serial:552387096.77
+Elapsed time for OpenMP Parallel: 0.005358 seconds
+FLOPS OpenMP Parallel:3195987.92
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000017 seconds
+FLOPS Serial:1007294117.65
+Elapsed time for OpenMP Parallel: 0.006779 seconds
+FLOPS OpenMP Parallel:2526031.72
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000034 seconds
+FLOPS Serial:503647058.82
+Elapsed time for OpenMP Parallel: 0.006575 seconds
+FLOPS OpenMP Parallel:2604507.85
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.045073 seconds
+FLOPS Serial:1228672242.81
+Elapsed time for OpenMP Parallel: 0.014799 seconds
+FLOPS OpenMP Parallel:3742194003.02
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.040065 seconds
+FLOPS Serial:1382252439.79
+Elapsed time for OpenMP Parallel: 0.014760 seconds
+FLOPS OpenMP Parallel:3752103852.09
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.043283 seconds
+FLOPS Serial:1279484878.59
+Elapsed time for OpenMP Parallel: 0.014870 seconds
+FLOPS OpenMP Parallel:3724153394.82
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.043086 seconds
+FLOPS Serial:1285335004.41
+Elapsed time for OpenMP Parallel: 0.015124 seconds
+FLOPS OpenMP Parallel:3661735546.90
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.045899 seconds
+FLOPS Serial:1206561014.40
+Elapsed time for OpenMP Parallel: 0.014870 seconds
+FLOPS OpenMP Parallel:3724296842.85
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.039978 seconds
+FLOPS Serial:1385260493.27
+Elapsed time for OpenMP Parallel: 0.019503 seconds
+FLOPS OpenMP Parallel:2839621129.09
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.044436 seconds
+FLOPS Serial:1246285534.25
+Elapsed time for OpenMP Parallel: 0.013556 seconds
+FLOPS OpenMP Parallel:4085272088.88
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.043999 seconds
+FLOPS Serial:1258663696.90
+Elapsed time for OpenMP Parallel: 0.014824 seconds
+FLOPS OpenMP Parallel:3735772925.84
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.043270 seconds
+FLOPS Serial:1279869285.88
+Elapsed time for OpenMP Parallel: 0.015645 seconds
+FLOPS OpenMP Parallel:3539732988.13
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001473 seconds
+FLOPS Serial:446104548.54
+Elapsed time for OpenMP Parallel: 0.005581 seconds
+FLOPS OpenMP Parallel:117737863.66
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001734 seconds
+FLOPS Serial:378957324.11
+Elapsed time for OpenMP Parallel: 0.006333 seconds
+FLOPS OpenMP Parallel:103752251.29
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001699 seconds
+FLOPS Serial:386763978.81
+Elapsed time for OpenMP Parallel: 0.006451 seconds
+FLOPS OpenMP Parallel:101869883.08
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001511 seconds
+FLOPS Serial:434885506.29
+Elapsed time for OpenMP Parallel: 0.006267 seconds
+FLOPS OpenMP Parallel:104845304.32
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001601 seconds
+FLOPS Serial:410438475.95
+Elapsed time for OpenMP Parallel: 0.007714 seconds
+FLOPS OpenMP Parallel:85179572.88
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001693 seconds
+FLOPS Serial:388134672.18
+Elapsed time for OpenMP Parallel: 0.005913 seconds
+FLOPS OpenMP Parallel:111129831.98
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002023 seconds
+FLOPS Serial:324820563.52
+Elapsed time for OpenMP Parallel: 0.006699 seconds
+FLOPS OpenMP Parallel:98089142.12
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001583 seconds
+FLOPS Serial:415105495.89
+Elapsed time for OpenMP Parallel: 0.005689 seconds
+FLOPS OpenMP Parallel:115497435.72
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001470 seconds
+FLOPS Serial:447014965.99
+Elapsed time for OpenMP Parallel: 0.005554 seconds
+FLOPS OpenMP Parallel:118318666.23
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000159 seconds
+FLOPS Serial:306691823.90
+Elapsed time for OpenMP Parallel: 0.008395 seconds
+FLOPS OpenMP Parallel:5808652.87
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000144 seconds
+FLOPS Serial:338638888.89
+Elapsed time for OpenMP Parallel: 0.009057 seconds
+FLOPS OpenMP Parallel:5383944.90
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000150 seconds
+FLOPS Serial:325093333.33
+Elapsed time for OpenMP Parallel: 0.008391 seconds
+FLOPS OpenMP Parallel:5811197.41
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000142 seconds
+FLOPS Serial:343408450.70
+Elapsed time for OpenMP Parallel: 0.009423 seconds
+FLOPS OpenMP Parallel:5174778.55
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000143 seconds
+FLOPS Serial:341006993.01
+Elapsed time for OpenMP Parallel: 0.009622 seconds
+FLOPS OpenMP Parallel:5068156.54
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000133 seconds
+FLOPS Serial:366646616.54
+Elapsed time for OpenMP Parallel: 0.011747 seconds
+FLOPS OpenMP Parallel:4151166.54
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000101 seconds
+FLOPS Serial:482811881.19
+Elapsed time for OpenMP Parallel: 0.006418 seconds
+FLOPS OpenMP Parallel:7597505.11
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000149 seconds
+FLOPS Serial:327275167.79
+Elapsed time for OpenMP Parallel: 0.008443 seconds
+FLOPS OpenMP Parallel:5775344.21
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000141 seconds
+FLOPS Serial:345843971.63
+Elapsed time for OpenMP Parallel: 0.008707 seconds
+FLOPS OpenMP Parallel:5600658.55
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002083 seconds
+FLOPS Serial:211053288.53
+Elapsed time for OpenMP Parallel: 0.006366 seconds
+FLOPS OpenMP Parallel:69054680.90
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001780 seconds
+FLOPS Serial:246979775.28
+Elapsed time for OpenMP Parallel: 0.007337 seconds
+FLOPS OpenMP Parallel:59917602.42
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002025 seconds
+FLOPS Serial:217098271.60
+Elapsed time for OpenMP Parallel: 0.006416 seconds
+FLOPS OpenMP Parallel:68518244.84
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001841 seconds
+FLOPS Serial:238796306.36
+Elapsed time for OpenMP Parallel: 0.006055 seconds
+FLOPS OpenMP Parallel:72608243.90
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002207 seconds
+FLOPS Serial:199195287.72
+Elapsed time for OpenMP Parallel: 0.005945 seconds
+FLOPS OpenMP Parallel:73954032.89
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002208 seconds
+FLOPS Serial:199105072.46
+Elapsed time for OpenMP Parallel: 0.006287 seconds
+FLOPS OpenMP Parallel:69929606.46
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002030 seconds
+FLOPS Serial:216563546.80
+Elapsed time for OpenMP Parallel: 0.005870 seconds
+FLOPS OpenMP Parallel:74892435.25
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002233 seconds
+FLOPS Serial:196875951.63
+Elapsed time for OpenMP Parallel: 0.006676 seconds
+FLOPS OpenMP Parallel:65851715.01
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001581 seconds
+FLOPS Serial:278067046.17
+Elapsed time for OpenMP Parallel: 0.005411 seconds
+FLOPS OpenMP Parallel:81239372.83
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.026054 seconds
+FLOPS Serial:376462654.49
+Elapsed time for OpenMP Parallel: 0.014067 seconds
+FLOPS OpenMP Parallel:697258045.99
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.024356 seconds
+FLOPS Serial:402708080.14
+Elapsed time for OpenMP Parallel: 0.012721 seconds
+FLOPS OpenMP Parallel:771011859.82
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.028938 seconds
+FLOPS Serial:338943880.02
+Elapsed time for OpenMP Parallel: 0.012471 seconds
+FLOPS OpenMP Parallel:786517168.29
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.031035 seconds
+FLOPS Serial:316041823.75
+Elapsed time for OpenMP Parallel: 0.012312 seconds
+FLOPS OpenMP Parallel:796670227.25
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.024154 seconds
+FLOPS Serial:406075929.45
+Elapsed time for OpenMP Parallel: 0.013052 seconds
+FLOPS OpenMP Parallel:751459459.59
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.023988 seconds
+FLOPS Serial:408886026.35
+Elapsed time for OpenMP Parallel: 0.012760 seconds
+FLOPS OpenMP Parallel:768675924.08
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.024633 seconds
+FLOPS Serial:398179596.48
+Elapsed time for OpenMP Parallel: 0.009664 seconds
+FLOPS OpenMP Parallel:1014976439.87
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.025266 seconds
+FLOPS Serial:388203831.24
+Elapsed time for OpenMP Parallel: 0.010591 seconds
+FLOPS OpenMP Parallel:926111548.10
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.027095 seconds
+FLOPS Serial:361998818.97
+Elapsed time for OpenMP Parallel: 0.009956 seconds
+FLOPS OpenMP Parallel:985196963.20
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000021 seconds
+FLOPS Serial:380571428.57
+Elapsed time for OpenMP Parallel: 0.008672 seconds
+FLOPS OpenMP Parallel:921603.45
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000013 seconds
+FLOPS Serial:614769230.77
+Elapsed time for OpenMP Parallel: 0.005970 seconds
+FLOPS OpenMP Parallel:1338712.41
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000018 seconds
+FLOPS Serial:444000000.00
+Elapsed time for OpenMP Parallel: 0.007234 seconds
+FLOPS OpenMP Parallel:1104753.86
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000010 seconds
+FLOPS Serial:799200000.00
+Elapsed time for OpenMP Parallel: 0.004988 seconds
+FLOPS OpenMP Parallel:1602138.96
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000018 seconds
+FLOPS Serial:444000000.00
+Elapsed time for OpenMP Parallel: 0.005133 seconds
+FLOPS OpenMP Parallel:1557067.50
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000012 seconds
+FLOPS Serial:666000000.00
+Elapsed time for OpenMP Parallel: 0.004767 seconds
+FLOPS OpenMP Parallel:1676598.92
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000018 seconds
+FLOPS Serial:444000000.00
+Elapsed time for OpenMP Parallel: 0.007954 seconds
+FLOPS OpenMP Parallel:1004766.11
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000015 seconds
+FLOPS Serial:532800000.00
+Elapsed time for OpenMP Parallel: 0.006299 seconds
+FLOPS OpenMP Parallel:1268787.22
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000020 seconds
+FLOPS Serial:399600000.00
+Elapsed time for OpenMP Parallel: 0.009446 seconds
+FLOPS OpenMP Parallel:846056.25
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.017510 seconds
+FLOPS Serial:145447058.82
+Elapsed time for OpenMP Parallel: 0.008632 seconds
+FLOPS OpenMP Parallel:295056105.92
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.016314 seconds
+FLOPS Serial:156109966.90
+Elapsed time for OpenMP Parallel: 0.010815 seconds
+FLOPS OpenMP Parallel:235476808.80
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.016269 seconds
+FLOPS Serial:156541766.55
+Elapsed time for OpenMP Parallel: 0.010329 seconds
+FLOPS OpenMP Parallel:246558189.28
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.015284 seconds
+FLOPS Serial:166630332.37
+Elapsed time for OpenMP Parallel: 0.010552 seconds
+FLOPS OpenMP Parallel:241345178.12
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.016751 seconds
+FLOPS Serial:152037370.90
+Elapsed time for OpenMP Parallel: 0.009493 seconds
+FLOPS OpenMP Parallel:268268997.80
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.016132 seconds
+FLOPS Serial:157871187.70
+Elapsed time for OpenMP Parallel: 0.009896 seconds
+FLOPS OpenMP Parallel:257364411.05
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.016850 seconds
+FLOPS Serial:151144094.96
+Elapsed time for OpenMP Parallel: 0.007303 seconds
+FLOPS OpenMP Parallel:348723515.76
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.016175 seconds
+FLOPS Serial:157451499.23
+Elapsed time for OpenMP Parallel: 0.007743 seconds
+FLOPS OpenMP Parallel:328917039.02
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.017330 seconds
+FLOPS Serial:146957761.11
+Elapsed time for OpenMP Parallel: 0.010015 seconds
+FLOPS OpenMP Parallel:254302063.38
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002207 seconds
+FLOPS Serial:368697779.79
+Elapsed time for OpenMP Parallel: 0.005588 seconds
+FLOPS OpenMP Parallel:145612602.76
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002674 seconds
+FLOPS Serial:304306656.69
+Elapsed time for OpenMP Parallel: 0.003363 seconds
+FLOPS OpenMP Parallel:241989674.78
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002437 seconds
+FLOPS Serial:333900697.58
+Elapsed time for OpenMP Parallel: 0.005788 seconds
+FLOPS OpenMP Parallel:140588805.05
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002692 seconds
+FLOPS Serial:302271916.79
+Elapsed time for OpenMP Parallel: 0.005847 seconds
+FLOPS OpenMP Parallel:139175046.71
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001939 seconds
+FLOPS Serial:419657555.44
+Elapsed time for OpenMP Parallel: 0.006993 seconds
+FLOPS OpenMP Parallel:116367216.43
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002430 seconds
+FLOPS Serial:334862551.44
+Elapsed time for OpenMP Parallel: 0.006238 seconds
+FLOPS OpenMP Parallel:130445140.98
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002133 seconds
+FLOPS Serial:381488982.65
+Elapsed time for OpenMP Parallel: 0.005268 seconds
+FLOPS OpenMP Parallel:154454456.13
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002106 seconds
+FLOPS Serial:386379867.05
+Elapsed time for OpenMP Parallel: 0.005424 seconds
+FLOPS OpenMP Parallel:150012310.79
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002228 seconds
+FLOPS Serial:365222621.18
+Elapsed time for OpenMP Parallel: 0.005662 seconds
+FLOPS OpenMP Parallel:143717380.14
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.002416 seconds
+FLOPS Serial:336802980.13
+Elapsed time for OpenMP Parallel: 0.009812 seconds
+FLOPS OpenMP Parallel:82932442.86
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Segmentation fault (core dumped)
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.003568 seconds
+FLOPS Serial:6303811.66
+Elapsed time for OpenMP Parallel: 0.005221 seconds
+FLOPS OpenMP Parallel:4307579.78
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.006542 seconds
+FLOPS Serial:3438092.33
+Elapsed time for OpenMP Parallel: 0.004607 seconds
+FLOPS OpenMP Parallel:4882512.51
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.003513 seconds
+FLOPS Serial:6402504.98
+Elapsed time for OpenMP Parallel: 0.005637 seconds
+FLOPS OpenMP Parallel:3989860.41
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.005803 seconds
+FLOPS Serial:3875926.25
+Elapsed time for OpenMP Parallel: 0.010132 seconds
+FLOPS OpenMP Parallel:2219844.95
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.005319 seconds
+FLOPS Serial:4228614.40
+Elapsed time for OpenMP Parallel: 0.007324 seconds
+FLOPS OpenMP Parallel:3070949.52
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.006268 seconds
+FLOPS Serial:3588385.45
+Elapsed time for OpenMP Parallel: 0.008926 seconds
+FLOPS OpenMP Parallel:2519918.19
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.006101 seconds
+FLOPS Serial:3686608.75
+Elapsed time for OpenMP Parallel: 0.009012 seconds
+FLOPS OpenMP Parallel:2495890.52
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.006266 seconds
+FLOPS Serial:3589530.80
+Elapsed time for OpenMP Parallel: 0.006398 seconds
+FLOPS OpenMP Parallel:3515635.40
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.006334 seconds
+FLOPS Serial:3550994.63
+Elapsed time for OpenMP Parallel: 0.008300 seconds
+FLOPS OpenMP Parallel:2709843.38
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000325 seconds
+FLOPS Serial:629243076.92
+Elapsed time for OpenMP Parallel: 0.006475 seconds
+FLOPS OpenMP Parallel:31581781.95
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000343 seconds
+FLOPS Serial:596221574.34
+Elapsed time for OpenMP Parallel: 0.006352 seconds
+FLOPS OpenMP Parallel:32197400.12
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000215 seconds
+FLOPS Serial:951181395.35
+Elapsed time for OpenMP Parallel: 0.005030 seconds
+FLOPS OpenMP Parallel:40660520.49
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000304 seconds
+FLOPS Serial:672710526.32
+Elapsed time for OpenMP Parallel: 0.007082 seconds
+FLOPS OpenMP Parallel:28874995.97
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000307 seconds
+FLOPS Serial:666136807.82
+Elapsed time for OpenMP Parallel: 0.007206 seconds
+FLOPS OpenMP Parallel:28379443.66
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000324 seconds
+FLOPS Serial:631185185.19
+Elapsed time for OpenMP Parallel: 0.006134 seconds
+FLOPS OpenMP Parallel:33340641.36
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000306 seconds
+FLOPS Serial:668313725.49
+Elapsed time for OpenMP Parallel: 0.006379 seconds
+FLOPS OpenMP Parallel:32058185.62
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000367 seconds
+FLOPS Serial:557231607.63
+Elapsed time for OpenMP Parallel: 0.007764 seconds
+FLOPS OpenMP Parallel:26341476.57
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000320 seconds
+FLOPS Serial:639075000.00
+Elapsed time for OpenMP Parallel: 0.009281 seconds
+FLOPS OpenMP Parallel:22035304.53
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.044645 seconds
+FLOPS Serial:666750408.78
+Elapsed time for OpenMP Parallel: 0.017713 seconds
+FLOPS OpenMP Parallel:1680497601.22
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.043959 seconds
+FLOPS Serial:677155349.30
+Elapsed time for OpenMP Parallel: 0.018376 seconds
+FLOPS OpenMP Parallel:1619847892.75
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.043867 seconds
+FLOPS Serial:678575512.34
+Elapsed time for OpenMP Parallel: 0.019459 seconds
+FLOPS OpenMP Parallel:1529736326.54
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.047250 seconds
+FLOPS Serial:629990941.80
+Elapsed time for OpenMP Parallel: 0.016768 seconds
+FLOPS OpenMP Parallel:1775199552.63
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.045165 seconds
+FLOPS Serial:659073884.65
+Elapsed time for OpenMP Parallel: 0.019043 seconds
+FLOPS OpenMP Parallel:1563175385.21
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.041986 seconds
+FLOPS Serial:708976134.90
+Elapsed time for OpenMP Parallel: 0.015031 seconds
+FLOPS OpenMP Parallel:1980405968.58
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.043824 seconds
+FLOPS Serial:679241328.95
+Elapsed time for OpenMP Parallel: 0.018960 seconds
+FLOPS OpenMP Parallel:1569978749.46
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.046112 seconds
+FLOPS Serial:645538514.92
+Elapsed time for OpenMP Parallel: 0.019572 seconds
+FLOPS OpenMP Parallel:1520922878.48
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.044633 seconds
+FLOPS Serial:666929670.87
+Elapsed time for OpenMP Parallel: 0.020520 seconds
+FLOPS OpenMP Parallel:1450647783.87
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000049 seconds
+FLOPS Serial:300122448.98
+Elapsed time for OpenMP Parallel: 0.006258 seconds
+FLOPS OpenMP Parallel:2349922.80
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000090 seconds
+FLOPS Serial:163400000.00
+Elapsed time for OpenMP Parallel: 0.007232 seconds
+FLOPS OpenMP Parallel:2033582.30
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000071 seconds
+FLOPS Serial:207126760.56
+Elapsed time for OpenMP Parallel: 0.009572 seconds
+FLOPS OpenMP Parallel:1536365.57
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000068 seconds
+FLOPS Serial:216264705.88
+Elapsed time for OpenMP Parallel: 0.008818 seconds
+FLOPS OpenMP Parallel:1667740.86
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000075 seconds
+FLOPS Serial:196080000.00
+Elapsed time for OpenMP Parallel: 0.009259 seconds
+FLOPS OpenMP Parallel:1588300.07
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000068 seconds
+FLOPS Serial:216264705.88
+Elapsed time for OpenMP Parallel: 0.006797 seconds
+FLOPS OpenMP Parallel:2163466.17
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000063 seconds
+FLOPS Serial:233428571.43
+Elapsed time for OpenMP Parallel: 0.008657 seconds
+FLOPS OpenMP Parallel:1698780.92
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000063 seconds
+FLOPS Serial:233428571.43
+Elapsed time for OpenMP Parallel: 0.006921 seconds
+FLOPS OpenMP Parallel:2124815.77
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000067 seconds
+FLOPS Serial:219492537.31
+Elapsed time for OpenMP Parallel: 0.001280 seconds
+FLOPS OpenMP Parallel:11487253.27
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005748 seconds
+FLOPS Serial:473934238.00
+Elapsed time for OpenMP Parallel: 0.006495 seconds
+FLOPS OpenMP Parallel:419409257.19
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005791 seconds
+FLOPS Serial:470415126.92
+Elapsed time for OpenMP Parallel: 0.006261 seconds
+FLOPS OpenMP Parallel:435115817.98
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005560 seconds
+FLOPS Serial:489959352.52
+Elapsed time for OpenMP Parallel: 0.005986 seconds
+FLOPS OpenMP Parallel:455052970.14
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005477 seconds
+FLOPS Serial:497384334.49
+Elapsed time for OpenMP Parallel: 0.006138 seconds
+FLOPS OpenMP Parallel:443796490.10
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005498 seconds
+FLOPS Serial:495484539.83
+Elapsed time for OpenMP Parallel: 0.005666 seconds
+FLOPS OpenMP Parallel:480806443.05
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005524 seconds
+FLOPS Serial:493152425.78
+Elapsed time for OpenMP Parallel: 0.006502 seconds
+FLOPS OpenMP Parallel:418988660.70
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005509 seconds
+FLOPS Serial:494495189.69
+Elapsed time for OpenMP Parallel: 0.005876 seconds
+FLOPS OpenMP Parallel:463592935.28
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005511 seconds
+FLOPS Serial:494315732.17
+Elapsed time for OpenMP Parallel: 0.006471 seconds
+FLOPS OpenMP Parallel:420977214.25
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.005787 seconds
+FLOPS Serial:470740279.94
+Elapsed time for OpenMP Parallel: 0.006017 seconds
+FLOPS OpenMP Parallel:452730771.47
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Segmentation fault (core dumped)
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000337 seconds
+FLOPS Serial:453216617.21
+Elapsed time for OpenMP Parallel: 0.010695 seconds
+FLOPS OpenMP Parallel:14280370.07
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000327 seconds
+FLOPS Serial:467076452.60
+Elapsed time for OpenMP Parallel: 0.006725 seconds
+FLOPS OpenMP Parallel:22712409.56
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000325 seconds
+FLOPS Serial:469950769.23
+Elapsed time for OpenMP Parallel: 0.008249 seconds
+FLOPS OpenMP Parallel:18514804.87
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000332 seconds
+FLOPS Serial:460042168.67
+Elapsed time for OpenMP Parallel: 0.007360 seconds
+FLOPS OpenMP Parallel:20750927.55
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000334 seconds
+FLOPS Serial:457287425.15
+Elapsed time for OpenMP Parallel: 0.007880 seconds
+FLOPS OpenMP Parallel:19383595.13
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000296 seconds
+FLOPS Serial:515993243.24
+Elapsed time for OpenMP Parallel: 0.006922 seconds
+FLOPS OpenMP Parallel:22065906.43
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000287 seconds
+FLOPS Serial:532174216.03
+Elapsed time for OpenMP Parallel: 0.006914 seconds
+FLOPS OpenMP Parallel:22089910.03
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000264 seconds
+FLOPS Serial:578537878.79
+Elapsed time for OpenMP Parallel: 0.006680 seconds
+FLOPS OpenMP Parallel:22865536.07
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000256 seconds
+FLOPS Serial:596617187.50
+Elapsed time for OpenMP Parallel: 0.006303 seconds
+FLOPS OpenMP Parallel:24230215.62
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000630 seconds
+FLOPS Serial:934209523.81
+Elapsed time for OpenMP Parallel: 0.005966 seconds
+FLOPS OpenMP Parallel:98654360.07
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000644 seconds
+FLOPS Serial:913900621.12
+Elapsed time for OpenMP Parallel: 0.006220 seconds
+FLOPS OpenMP Parallel:94621291.68
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000582 seconds
+FLOPS Serial:1011257731.96
+Elapsed time for OpenMP Parallel: 0.006204 seconds
+FLOPS OpenMP Parallel:94870928.09
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000627 seconds
+FLOPS Serial:938679425.84
+Elapsed time for OpenMP Parallel: 0.006562 seconds
+FLOPS OpenMP Parallel:89695465.17
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000375 seconds
+FLOPS Serial:1569472000.00
+Elapsed time for OpenMP Parallel: 0.004952 seconds
+FLOPS OpenMP Parallel:118863232.58
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000417 seconds
+FLOPS Serial:1411395683.45
+Elapsed time for OpenMP Parallel: 0.004890 seconds
+FLOPS OpenMP Parallel:120363062.24
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000385 seconds
+FLOPS Serial:1528706493.51
+Elapsed time for OpenMP Parallel: 0.007531 seconds
+FLOPS OpenMP Parallel:78151357.32
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000378 seconds
+FLOPS Serial:1557015873.02
+Elapsed time for OpenMP Parallel: 0.005299 seconds
+FLOPS OpenMP Parallel:111073675.28
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000380 seconds
+FLOPS Serial:1548821052.63
+Elapsed time for OpenMP Parallel: 0.005283 seconds
+FLOPS OpenMP Parallel:111406063.06
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Segmentation fault (core dumped)
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000331 seconds
+FLOPS Serial:344012084.59
+Elapsed time for OpenMP Parallel: 0.006312 seconds
+FLOPS OpenMP Parallel:18041327.85
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000403 seconds
+FLOPS Serial:282550868.49
+Elapsed time for OpenMP Parallel: 0.006594 seconds
+FLOPS OpenMP Parallel:17268934.59
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000374 seconds
+FLOPS Serial:304459893.05
+Elapsed time for OpenMP Parallel: 0.010032 seconds
+FLOPS OpenMP Parallel:11350283.51
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000398 seconds
+FLOPS Serial:286100502.51
+Elapsed time for OpenMP Parallel: 0.006361 seconds
+FLOPS OpenMP Parallel:17900638.55
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000235 seconds
+FLOPS Serial:484544680.85
+Elapsed time for OpenMP Parallel: 0.005085 seconds
+FLOPS OpenMP Parallel:22392506.85
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000323 seconds
+FLOPS Serial:352532507.74
+Elapsed time for OpenMP Parallel: 0.006568 seconds
+FLOPS OpenMP Parallel:17335755.18
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000326 seconds
+FLOPS Serial:349288343.56
+Elapsed time for OpenMP Parallel: 0.006377 seconds
+FLOPS OpenMP Parallel:17857259.45
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000337 seconds
+FLOPS Serial:337887240.36
+Elapsed time for OpenMP Parallel: 0.007558 seconds
+FLOPS OpenMP Parallel:15066088.55
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000381 seconds
+FLOPS Serial:298866141.73
+Elapsed time for OpenMP Parallel: 0.009143 seconds
+FLOPS OpenMP Parallel:12454491.51
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000641 seconds
+FLOPS Serial:1510939157.57
+Elapsed time for OpenMP Parallel: 0.005205 seconds
+FLOPS OpenMP Parallel:186083552.60
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000918 seconds
+FLOPS Serial:1055023965.14
+Elapsed time for OpenMP Parallel: 0.006073 seconds
+FLOPS OpenMP Parallel:159478104.59
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000680 seconds
+FLOPS Serial:1424282352.94
+Elapsed time for OpenMP Parallel: 0.005089 seconds
+FLOPS OpenMP Parallel:190303064.95
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000736 seconds
+FLOPS Serial:1315913043.48
+Elapsed time for OpenMP Parallel: 0.005309 seconds
+FLOPS OpenMP Parallel:182444534.80
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000740 seconds
+FLOPS Serial:1308800000.00
+Elapsed time for OpenMP Parallel: 0.007801 seconds
+FLOPS OpenMP Parallel:124145633.02
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000941 seconds
+FLOPS Serial:1029236981.93
+Elapsed time for OpenMP Parallel: 0.005681 seconds
+FLOPS OpenMP Parallel:170495247.62
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000733 seconds
+FLOPS Serial:1321298772.17
+Elapsed time for OpenMP Parallel: 0.004910 seconds
+FLOPS OpenMP Parallel:197259252.34
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000826 seconds
+FLOPS Serial:1172532687.65
+Elapsed time for OpenMP Parallel: 0.005710 seconds
+FLOPS OpenMP Parallel:169609476.55
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.000820 seconds
+FLOPS Serial:1181112195.12
+Elapsed time for OpenMP Parallel: 0.008473 seconds
+FLOPS OpenMP Parallel:114310872.02
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.005549 seconds
+FLOPS Serial:445080915.48
+Elapsed time for OpenMP Parallel: 0.008306 seconds
+FLOPS OpenMP Parallel:297341759.69
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.005495 seconds
+FLOPS Serial:449454777.07
+Elapsed time for OpenMP Parallel: 0.005919 seconds
+FLOPS OpenMP Parallel:417280644.16
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.005834 seconds
+FLOPS Serial:423338018.51
+Elapsed time for OpenMP Parallel: 0.005986 seconds
+FLOPS OpenMP Parallel:412579550.42
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.005176 seconds
+FLOPS Serial:477154945.90
+Elapsed time for OpenMP Parallel: 0.005521 seconds
+FLOPS OpenMP Parallel:447321684.24
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.005612 seconds
+FLOPS Serial:440084461.87
+Elapsed time for OpenMP Parallel: 0.005172 seconds
+FLOPS OpenMP Parallel:477488096.42
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.005472 seconds
+FLOPS Serial:451343932.75
+Elapsed time for OpenMP Parallel: 0.005915 seconds
+FLOPS OpenMP Parallel:417558177.77
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.006665 seconds
+FLOPS Serial:370555738.93
+Elapsed time for OpenMP Parallel: 0.006226 seconds
+FLOPS OpenMP Parallel:396671777.58
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.005514 seconds
+FLOPS Serial:447906057.31
+Elapsed time for OpenMP Parallel: 0.005473 seconds
+FLOPS OpenMP Parallel:451260160.17
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - Pattern 
+Elapsed time for Serial: 0.005528 seconds
+FLOPS Serial:446771707.67
+Elapsed time for OpenMP Parallel: 0.005808 seconds
+FLOPS OpenMP Parallel:425247549.67
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004720 seconds
+FLOPS Serial:862252966.10
+Elapsed time for OpenMP Parallel: 0.008116 seconds
+FLOPS OpenMP Parallel:501437832.61
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004529 seconds
+FLOPS Serial:898616471.63
+Elapsed time for OpenMP Parallel: 0.005727 seconds
+FLOPS OpenMP Parallel:710616598.13
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004527 seconds
+FLOPS Serial:899013474.71
+Elapsed time for OpenMP Parallel: 0.005346 seconds
+FLOPS OpenMP Parallel:761354498.39
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004945 seconds
+FLOPS Serial:823020020.22
+Elapsed time for OpenMP Parallel: 0.005766 seconds
+FLOPS OpenMP Parallel:705807664.21
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004731 seconds
+FLOPS Serial:860248150.50
+Elapsed time for OpenMP Parallel: 0.005398 seconds
+FLOPS OpenMP Parallel:754006759.66
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004701 seconds
+FLOPS Serial:865737928.10
+Elapsed time for OpenMP Parallel: 0.002143 seconds
+FLOPS OpenMP Parallel:1899349425.34
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004420 seconds
+FLOPS Serial:920776923.08
+Elapsed time for OpenMP Parallel: 0.004986 seconds
+FLOPS OpenMP Parallel:816216743.00
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004667 seconds
+FLOPS Serial:872044996.79
+Elapsed time for OpenMP Parallel: 0.008175 seconds
+FLOPS OpenMP Parallel:497826454.22
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.004374 seconds
+FLOPS Serial:930460448.10
+Elapsed time for OpenMP Parallel: 0.006026 seconds
+FLOPS OpenMP Parallel:675357129.23
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.002010 seconds
+FLOPS Serial:490113432.84
+Elapsed time for OpenMP Parallel: 0.005161 seconds
+FLOPS OpenMP Parallel:190878307.13
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.001785 seconds
+FLOPS Serial:551892436.97
+Elapsed time for OpenMP Parallel: 0.005250 seconds
+FLOPS OpenMP Parallel:187633029.50
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.001691 seconds
+FLOPS Serial:582571259.61
+Elapsed time for OpenMP Parallel: 0.004891 seconds
+FLOPS OpenMP Parallel:201420746.52
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.001730 seconds
+FLOPS Serial:569438150.29
+Elapsed time for OpenMP Parallel: 0.004990 seconds
+FLOPS OpenMP Parallel:197415750.55
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.001653 seconds
+FLOPS Serial:595963702.36
+Elapsed time for OpenMP Parallel: 0.004896 seconds
+FLOPS OpenMP Parallel:201218591.49
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.001747 seconds
+FLOPS Serial:563896966.23
+Elapsed time for OpenMP Parallel: 0.007533 seconds
+FLOPS OpenMP Parallel:130780716.36
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.001861 seconds
+FLOPS Serial:529354110.69
+Elapsed time for OpenMP Parallel: 0.005648 seconds
+FLOPS OpenMP Parallel:174427980.36
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.001659 seconds
+FLOPS Serial:593808318.26
+Elapsed time for OpenMP Parallel: 0.006549 seconds
+FLOPS OpenMP Parallel:150422758.07
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.002099 seconds
+FLOPS Serial:469332062.89
+Elapsed time for OpenMP Parallel: 0.008318 seconds
+FLOPS OpenMP Parallel:118435020.89
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Segmentation fault (core dumped)
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001693 seconds
+FLOPS Serial:609156526.88
+Elapsed time for OpenMP Parallel: 0.005360 seconds
+FLOPS OpenMP Parallel:192420335.26
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001368 seconds
+FLOPS Serial:753875730.99
+Elapsed time for OpenMP Parallel: 0.002587 seconds
+FLOPS OpenMP Parallel:398706000.32
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+^[[AElapsed time for Serial: 0.001484 seconds
+FLOPS Serial:694947439.35
+Elapsed time for OpenMP Parallel: 0.005327 seconds
+FLOPS OpenMP Parallel:193610319.13
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001351 seconds
+FLOPS Serial:763361954.11
+Elapsed time for OpenMP Parallel: 0.005645 seconds
+FLOPS OpenMP Parallel:182687354.30
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001308 seconds
+FLOPS Serial:788457186.54
+Elapsed time for OpenMP Parallel: 0.002529 seconds
+FLOPS OpenMP Parallel:407836249.49
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001300 seconds
+FLOPS Serial:793309230.77
+Elapsed time for OpenMP Parallel: 0.005447 seconds
+FLOPS OpenMP Parallel:189317006.97
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001368 seconds
+FLOPS Serial:753875730.99
+Elapsed time for OpenMP Parallel: 0.004925 seconds
+FLOPS OpenMP Parallel:209395263.34
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001381 seconds
+FLOPS Serial:746779145.55
+Elapsed time for OpenMP Parallel: 0.005321 seconds
+FLOPS OpenMP Parallel:193810449.69
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.001602 seconds
+FLOPS Serial:643759051.19
+Elapsed time for OpenMP Parallel: 0.005500 seconds
+FLOPS OpenMP Parallel:187523998.75
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.C
+[s387796@crescent-login2 ~]$ nano openmpellpack5.C
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Segmentation fault (core dumped)
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.024006 seconds
+FLOPS Serial:681924185.62
+Elapsed time for OpenMP Parallel: 0.010891 seconds
+FLOPS OpenMP Parallel:1503162891.68
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.022585 seconds
+FLOPS Serial:724829400.04
+Elapsed time for OpenMP Parallel: 0.011994 seconds
+FLOPS OpenMP Parallel:1364833663.45
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.024616 seconds
+FLOPS Serial:665025674.36
+Elapsed time for OpenMP Parallel: 0.012034 seconds
+FLOPS OpenMP Parallel:1360311691.04
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.026371 seconds
+FLOPS Serial:620767964.81
+Elapsed time for OpenMP Parallel: 0.009794 seconds
+FLOPS OpenMP Parallel:1671533080.07
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.024666 seconds
+FLOPS Serial:663677612.91
+Elapsed time for OpenMP Parallel: 0.009792 seconds
+FLOPS OpenMP Parallel:1671860909.56
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.022369 seconds
+FLOPS Serial:731828512.67
+Elapsed time for OpenMP Parallel: 0.010668 seconds
+FLOPS OpenMP Parallel:1534456319.05
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.022446 seconds
+FLOPS Serial:729318007.66
+Elapsed time for OpenMP Parallel: 0.012214 seconds
+FLOPS OpenMP Parallel:1340313051.78
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.024160 seconds
+FLOPS Serial:677577483.44
+Elapsed time for OpenMP Parallel: 0.009615 seconds
+FLOPS OpenMP Parallel:1702528507.61
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Elapsed time for Serial: 0.022813 seconds
+FLOPS Serial:717585236.49
+Elapsed time for OpenMP Parallel: 0.009697 seconds
+FLOPS OpenMP Parallel:1688167588.59
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ nano openmpellpack5.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.013878 seconds
+FLOPS Serial:222207522.70
+Elapsed time for OpenMP Parallel: 0.010876 seconds
+FLOPS OpenMP Parallel:283547471.79
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.013246 seconds
+FLOPS Serial:232809602.90
+Elapsed time for OpenMP Parallel: 0.007924 seconds
+FLOPS OpenMP Parallel:389166197.26
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.012899 seconds
+FLOPS Serial:239072486.24
+Elapsed time for OpenMP Parallel: 0.010191 seconds
+FLOPS OpenMP Parallel:302597312.07
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.012936 seconds
+FLOPS Serial:238388682.75
+Elapsed time for OpenMP Parallel: 0.007425 seconds
+FLOPS OpenMP Parallel:415302934.13
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.012920 seconds
+FLOPS Serial:238683900.93
+Elapsed time for OpenMP Parallel: 0.009717 seconds
+FLOPS OpenMP Parallel:317346931.74
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.012880 seconds
+FLOPS Serial:239425155.28
+Elapsed time for OpenMP Parallel: 0.010385 seconds
+FLOPS OpenMP Parallel:296945559.92
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.012851 seconds
+FLOPS Serial:239965450.16
+Elapsed time for OpenMP Parallel: 0.009156 seconds
+FLOPS OpenMP Parallel:336823677.94
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.012892 seconds
+FLOPS Serial:239202296.00
+Elapsed time for OpenMP Parallel: 0.007857 seconds
+FLOPS OpenMP Parallel:392509269.74
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o openmpellpack5 openmpellpack5.c
+[s387796@crescent-login2 ~]$ ./openmpellpack5
+Matrix Market - symmetric 
+Elapsed time for Serial: 0.013274 seconds
+FLOPS Serial:232318517.40
+Elapsed time for OpenMP Parallel: 0.008062 seconds
+FLOPS OpenMP Parallel:382499733.37
+
+VECTOR RESULT VALIDATED SUCESFULLY
+[s387796@crescent-login2 ~]$ client_loop: send disconnect: Broken pipe
+(base) chandnisaha@rn-dynamic-217-060 ~ % 

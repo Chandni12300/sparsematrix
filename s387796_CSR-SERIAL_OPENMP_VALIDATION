@@ -1,0 +1,2400 @@
+Last login: Sat Feb 25 09:58:07 on ttys001
+(base) chandnisaha@rn-dynamic-217-060 ~ % ssh -x s387796@crescent.central.cranfield.ac.uk
+
+
++-----------------------------------------------------------------+
+| This system is for the use of authorised users only.            |
+| Individuals using this computer system without authority, or in |
+| excess of their authority, are subject to having all of their   |
+| activities on this system monitored and recorded by system      |
+| personnel.                                                      |
+|                                                                 |
+| In the course of monitoring individuals improperly using this   |
+| system, or in the course of system maintenance, the activities  |
+| of authorised users may also be monitored.                      |
+|                                                                 |
+| Anyone using this system expressly consents to such monitoring  |
+| and is advised that if such monitoring reveals possible         |
+| evidence of criminal activity, system personnel may provide the |
+| evidence of such monitoring to law enforcement officials.       |
++-----------------------------------------------------------------+
+                                                     __      
+                                                    /\ \__   
+       ___   _ __    __    ____    ___     __    ___\ \ ,_\  
+      /'___\/\`'__\/'__`\ /',__\  /'___\ /'__`\/' _ `\ \ \/  
+     /\ \__/\ \ \//\  __//\__, `\/\ \__//\  __//\ \/\ \ \ \_ 
+     \ \____\\ \_\\ \____\/\____/\ \____\ \____\ \_\ \_\ \__\
+      \/____/ \/_/ \/____/\/___/  \/____/\/____/\/_/\/_/\/__/
+                                                        
+                                                                                                          
+	     YOU ARE NOW LOGGED INTO crescent-login2
+
+s387796@crescent.central.cranfield.ac.uk's password: 
+Last login: Sat Feb 25 10:11:34 2023 from rn-dynamic-217-060.wless.cranfield.ac.uk
+*********************************************************************
+************** Your current disk usage is given below ***************
+      user/group     ||           size          ||    chunk files    
+     name     |  id  ||    used    |    hard    ||  used   |  hard   
+--------------|------||------------|------------||---------|---------
+       s387796|715229||    3.54 GiB|   50.00 GiB||      707|unlimited
+*********************************************************************
+
+This cluster contains Intel(R) Xeon(R) Cluster Nodes
+[s387796@crescent-login2 ~]$ module load fosscuda/2019b
+[s387796@crescent-login2 ~]$ gcc --version 
+gcc (GCC) 8.3.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[s387796@crescent-login2 ~]$ export CC=$8.3.0
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000001 seconds
+FLOPS Serial (CSR) :98000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.014214 seconds
+FLOPS for Parallel OpenMP (CSR) :6894.77
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000002 seconds
+FLOPS Serial (CSR) :49000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.009889 seconds
+FLOPS for Parallel OpenMP (CSR) :9909.76
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000001 seconds
+FLOPS Serial (CSR) :98000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.009335 seconds
+FLOPS for Parallel OpenMP (CSR) :10497.82
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000002 seconds
+FLOPS Serial (CSR) :49000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005034 seconds
+FLOPS for Parallel OpenMP (CSR) :19467.34
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000001 seconds
+FLOPS Serial (CSR) :98000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005632 seconds
+FLOPS for Parallel OpenMP (CSR) :17399.77
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000002 seconds
+FLOPS Serial (CSR) :49000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.008605 seconds
+FLOPS for Parallel OpenMP (CSR) :11389.12
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000001 seconds
+FLOPS Serial (CSR) :98000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.004952 seconds
+FLOPS for Parallel OpenMP (CSR) :19789.72
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000001 seconds
+FLOPS Serial (CSR) :98000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005071 seconds
+FLOPS for Parallel OpenMP (CSR) :19326.00
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000001 seconds
+FLOPS Serial (CSR) :98000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.004933 seconds
+FLOPS for Parallel OpenMP (CSR) :19867.05
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.176503 seconds
+FLOPS Serial (CSR) :732967167.70
+Time taken for vector product in Parallel OpenMP (CSR): 0.042691 seconds
+FLOPS for Parallel OpenMP (CSR) :3030374930.87
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.094801 seconds
+FLOPS Serial (CSR) :1364657588.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.039399 seconds
+FLOPS for Parallel OpenMP (CSR) :3283638017.06
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.118835 seconds
+FLOPS Serial (CSR) :1088659940.25
+Time taken for vector product in Parallel OpenMP (CSR): 0.031829 seconds
+FLOPS for Parallel OpenMP (CSR) :4064540589.90
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.097074 seconds
+FLOPS Serial (CSR) :1332703957.81
+Time taken for vector product in Parallel OpenMP (CSR): 0.040299 seconds
+FLOPS for Parallel OpenMP (CSR) :3210307895.87
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.099388 seconds
+FLOPS Serial (CSR) :1301675292.79
+Time taken for vector product in Parallel OpenMP (CSR): 0.032556 seconds
+FLOPS for Parallel OpenMP (CSR) :3973807618.66
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.096712 seconds
+FLOPS Serial (CSR) :1337692364.96
+Time taken for vector product in Parallel OpenMP (CSR): 0.037112 seconds
+FLOPS for Parallel OpenMP (CSR) :3485977510.71
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.097918 seconds
+FLOPS Serial (CSR) :1321216773.22
+Time taken for vector product in Parallel OpenMP (CSR): 0.034401 seconds
+FLOPS for Parallel OpenMP (CSR) :3760631384.15
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.094116 seconds
+FLOPS Serial (CSR) :1374589910.32
+Time taken for vector product in Parallel OpenMP (CSR): 0.037631 seconds
+FLOPS for Parallel OpenMP (CSR) :3437847805.52
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.098143 seconds
+FLOPS Serial (CSR) :1318187787.21
+Time taken for vector product in Parallel OpenMP (CSR): 0.038770 seconds
+FLOPS for Parallel OpenMP (CSR) :3336923276.26
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001053 seconds
+FLOPS Serial (CSR) :818119658.12
+Time taken for vector product in Parallel OpenMP (CSR): 0.005724 seconds
+FLOPS for Parallel OpenMP (CSR) :150498888.85
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000600 seconds
+FLOPS Serial (CSR) :1435800000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005141 seconds
+FLOPS for Parallel OpenMP (CSR) :167571444.04
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000607 seconds
+FLOPS Serial (CSR) :1419242174.63
+Time taken for vector product in Parallel OpenMP (CSR): 0.005215 seconds
+FLOPS for Parallel OpenMP (CSR) :165194766.98
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000582 seconds
+FLOPS Serial (CSR) :1480206185.57
+Time taken for vector product in Parallel OpenMP (CSR): 0.005445 seconds
+FLOPS for Parallel OpenMP (CSR) :158220213.57
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000636 seconds
+FLOPS Serial (CSR) :1354528301.89
+Time taken for vector product in Parallel OpenMP (CSR): 0.006161 seconds
+FLOPS for Parallel OpenMP (CSR) :139837026.34
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000604 seconds
+FLOPS Serial (CSR) :1426291390.73
+Time taken for vector product in Parallel OpenMP (CSR): 0.005244 seconds
+FLOPS for Parallel OpenMP (CSR) :164282885.24
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000615 seconds
+FLOPS Serial (CSR) :1400780487.80
+Time taken for vector product in Parallel OpenMP (CSR): 0.004997 seconds
+FLOPS for Parallel OpenMP (CSR) :172383436.43
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000608 seconds
+FLOPS Serial (CSR) :1416907894.74
+Time taken for vector product in Parallel OpenMP (CSR): 0.005292 seconds
+FLOPS for Parallel OpenMP (CSR) :162792975.66
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+^[[A^[[A[s387796@crescent-log./csrparallelopenmp3penmp3.c
+Time taken for vector product in serial (CSR): 0.000610 seconds
+FLOPS Serial (CSR) :1412262295.08
+Time taken for vector product in Parallel OpenMP (CSR): 0.006389 seconds
+FLOPS for Parallel OpenMP (CSR) :134836460.16
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Segmentation fault (core dumped)
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000032 seconds
+FLOPS Serial (CSR) :535125000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.006197 seconds
+FLOPS for Parallel OpenMP (CSR) :2763219.43
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000012 seconds
+FLOPS Serial (CSR) :1427000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.004822 seconds
+FLOPS for Parallel OpenMP (CSR) :3551163.94
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O3 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000023 seconds
+FLOPS Serial (CSR) :744521739.13
+Time taken for vector product in Parallel OpenMP (CSR): 0.005787 seconds
+FLOPS for Parallel OpenMP (CSR) :2958924.68
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000023 seconds
+FLOPS Serial (CSR) :744521739.13
+Time taken for vector product in Parallel OpenMP (CSR): 0.008878 seconds
+FLOPS for Parallel OpenMP (CSR) :1928892.50
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000023 seconds
+FLOPS Serial (CSR) :744521739.13
+Time taken for vector product in Parallel OpenMP (CSR): 0.008526 seconds
+FLOPS for Parallel OpenMP (CSR) :2008496.05
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000038 seconds
+FLOPS Serial (CSR) :450631578.95
+Time taken for vector product in Parallel OpenMP (CSR): 0.006428 seconds
+FLOPS for Parallel OpenMP (CSR) :2663775.79
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000025 seconds
+FLOPS Serial (CSR) :684960000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.008712 seconds
+FLOPS for Parallel OpenMP (CSR) :1965494.09
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000021 seconds
+FLOPS Serial (CSR) :815428571.43
+Time taken for vector product in Parallel OpenMP (CSR): 0.006072 seconds
+FLOPS for Parallel OpenMP (CSR) :2820067.42
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000024 seconds
+FLOPS Serial (CSR) :713500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.007631 seconds
+FLOPS for Parallel OpenMP (CSR) :2243922.25
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000024 seconds
+FLOPS Serial (CSR) :713500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.008791 seconds
+FLOPS for Parallel OpenMP (CSR) :1947809.93
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.086561 seconds
+FLOPS Serial (CSR) :639779392.57
+Time taken for vector product in Parallel OpenMP (CSR): 0.017542 seconds
+FLOPS for Parallel OpenMP (CSR) :3157037219.55
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.041449 seconds
+FLOPS Serial (CSR) :1336098434.22
+Time taken for vector product in Parallel OpenMP (CSR): 0.017575 seconds
+FLOPS for Parallel OpenMP (CSR) :3151024022.45
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.046504 seconds
+FLOPS Serial (CSR) :1190864097.71
+Time taken for vector product in Parallel OpenMP (CSR): 0.018622 seconds
+FLOPS for Parallel OpenMP (CSR) :2973899312.20
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.041118 seconds
+FLOPS Serial (CSR) :1346854029.87
+Time taken for vector product in Parallel OpenMP (CSR): 0.017024 seconds
+FLOPS for Parallel OpenMP (CSR) :3253019511.22
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.041159 seconds
+FLOPS Serial (CSR) :1345512378.82
+Time taken for vector product in Parallel OpenMP (CSR): 0.015464 seconds
+FLOPS for Parallel OpenMP (CSR) :3581184402.32
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.041154 seconds
+FLOPS Serial (CSR) :1345675851.68
+Time taken for vector product in Parallel OpenMP (CSR): 0.015899 seconds
+FLOPS for Parallel OpenMP (CSR) :3483339757.53
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.041250 seconds
+FLOPS Serial (CSR) :1342544096.97
+Time taken for vector product in Parallel OpenMP (CSR): 0.015810 seconds
+FLOPS for Parallel OpenMP (CSR) :3502766874.31
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.041221 seconds
+FLOPS Serial (CSR) :1343488610.17
+Time taken for vector product in Parallel OpenMP (CSR): 0.017153 seconds
+FLOPS for Parallel OpenMP (CSR) :3228540297.68
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.042665 seconds
+FLOPS Serial (CSR) :1298018141.33
+Time taken for vector product in Parallel OpenMP (CSR): 0.018101 seconds
+FLOPS for Parallel OpenMP (CSR) :3059447545.01
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001749 seconds
+FLOPS Serial (CSR) :375707261.29
+Time taken for vector product in Parallel OpenMP (CSR): 0.005822 seconds
+FLOPS for Parallel OpenMP (CSR) :112875955.95
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001745 seconds
+FLOPS Serial (CSR) :376568481.38
+Time taken for vector product in Parallel OpenMP (CSR): 0.006274 seconds
+FLOPS for Parallel OpenMP (CSR) :104742532.49
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001301 seconds
+FLOPS Serial (CSR) :505082244.43
+Time taken for vector product in Parallel OpenMP (CSR): 0.006062 seconds
+FLOPS for Parallel OpenMP (CSR) :108397181.71
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001575 seconds
+FLOPS Serial (CSR) :417213968.25
+Time taken for vector product in Parallel OpenMP (CSR): 0.007024 seconds
+FLOPS for Parallel OpenMP (CSR) :93550724.35
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001559 seconds
+FLOPS Serial (CSR) :421495830.66
+Time taken for vector product in Parallel OpenMP (CSR): 0.006380 seconds
+FLOPS for Parallel OpenMP (CSR) :102992496.72
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001854 seconds
+FLOPS Serial (CSR) :354429341.96
+Time taken for vector product in Parallel OpenMP (CSR): 0.011136 seconds
+FLOPS for Parallel OpenMP (CSR) :59006643.68
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001534 seconds
+FLOPS Serial (CSR) :428365058.67
+Time taken for vector product in Parallel OpenMP (CSR): 0.006730 seconds
+FLOPS for Parallel OpenMP (CSR) :97632424.35
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001822 seconds
+FLOPS Serial (CSR) :360654226.13
+Time taken for vector product in Parallel OpenMP (CSR): 0.007871 seconds
+FLOPS for Parallel OpenMP (CSR) :83484516.22
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001347 seconds
+FLOPS Serial (CSR) :487833704.53
+Time taken for vector product in Parallel OpenMP (CSR): 0.005702 seconds
+FLOPS for Parallel OpenMP (CSR) :115251799.86
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000129 seconds
+FLOPS Serial (CSR) :378015503.88
+Time taken for vector product in Parallel OpenMP (CSR): 0.008819 seconds
+FLOPS for Parallel OpenMP (CSR) :5529580.52
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000059 seconds
+FLOPS Serial (CSR) :826508474.58
+Time taken for vector product in Parallel OpenMP (CSR): 0.008894 seconds
+FLOPS for Parallel OpenMP (CSR) :5482844.35
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000062 seconds
+FLOPS Serial (CSR) :786516129.03
+Time taken for vector product in Parallel OpenMP (CSR): 0.008771 seconds
+FLOPS for Parallel OpenMP (CSR) :5559404.07
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000063 seconds
+FLOPS Serial (CSR) :774031746.03
+Time taken for vector product in Parallel OpenMP (CSR): 0.008938 seconds
+FLOPS for Parallel OpenMP (CSR) :5455708.56
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000063 seconds
+FLOPS Serial (CSR) :774031746.03
+Time taken for vector product in Parallel OpenMP (CSR): 0.008228 seconds
+FLOPS for Parallel OpenMP (CSR) :5926543.64
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000049 seconds
+FLOPS Serial (CSR) :995183673.47
+Time taken for vector product in Parallel OpenMP (CSR): 0.005899 seconds
+FLOPS for Parallel OpenMP (CSR) :8267095.40
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000062 seconds
+FLOPS Serial (CSR) :786516129.03
+Time taken for vector product in Parallel OpenMP (CSR): 0.008606 seconds
+FLOPS for Parallel OpenMP (CSR) :5666406.36
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000064 seconds
+FLOPS Serial (CSR) :761937500.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.008681 seconds
+FLOPS for Parallel OpenMP (CSR) :5617087.02
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000046 seconds
+FLOPS Serial (CSR) :1060086956.52
+Time taken for vector product in Parallel OpenMP (CSR): 0.006969 seconds
+FLOPS for Parallel OpenMP (CSR) :6997291.19
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000784 seconds
+FLOPS Serial (CSR) :560744897.96
+Time taken for vector product in Parallel OpenMP (CSR): 0.007353 seconds
+FLOPS for Parallel OpenMP (CSR) :59788753.97
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000703 seconds
+FLOPS Serial (CSR) :625354196.30
+Time taken for vector product in Parallel OpenMP (CSR): 0.007175 seconds
+FLOPS for Parallel OpenMP (CSR) :61273495.43
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000454 seconds
+FLOPS Serial (CSR) :968334801.76
+Time taken for vector product in Parallel OpenMP (CSR): 0.006427 seconds
+FLOPS for Parallel OpenMP (CSR) :68406103.02
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000405 seconds
+FLOPS Serial (CSR) :1085491358.02
+Time taken for vector product in Parallel OpenMP (CSR): 0.005590 seconds
+FLOPS for Parallel OpenMP (CSR) :78639453.15
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000401 seconds
+FLOPS Serial (CSR) :1096319202.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.006178 seconds
+FLOPS for Parallel OpenMP (CSR) :71156123.02
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000467 seconds
+FLOPS Serial (CSR) :941379014.99
+Time taken for vector product in Parallel OpenMP (CSR): 0.004732 seconds
+FLOPS for Parallel OpenMP (CSR) :92902949.92
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000432 seconds
+FLOPS Serial (CSR) :1017648148.15
+Time taken for vector product in Parallel OpenMP (CSR): 0.005197 seconds
+FLOPS for Parallel OpenMP (CSR) :84585987.35
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000466 seconds
+FLOPS Serial (CSR) :943399141.63
+Time taken for vector product in Parallel OpenMP (CSR): 0.005209 seconds
+FLOPS for Parallel OpenMP (CSR) :84402093.06
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000526 seconds
+FLOPS Serial (CSR) :835787072.24
+Time taken for vector product in Parallel OpenMP (CSR): 0.005382 seconds
+FLOPS for Parallel OpenMP (CSR) :81691051.89
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.021126 seconds
+FLOPS Serial (CSR) :464278992.71
+Time taken for vector product in Parallel OpenMP (CSR): 0.013634 seconds
+FLOPS for Parallel OpenMP (CSR) :719429298.78
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.018645 seconds
+FLOPS Serial (CSR) :526058353.45
+Time taken for vector product in Parallel OpenMP (CSR): 0.013678 seconds
+FLOPS for Parallel OpenMP (CSR) :717074187.37
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.017657 seconds
+FLOPS Serial (CSR) :555494025.03
+Time taken for vector product in Parallel OpenMP (CSR): 0.013395 seconds
+FLOPS for Parallel OpenMP (CSR) :732255193.39
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.032200 seconds
+FLOPS Serial (CSR) :304607391.30
+Time taken for vector product in Parallel OpenMP (CSR): 0.011455 seconds
+FLOPS for Parallel OpenMP (CSR) :856272170.52
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.030599 seconds
+FLOPS Serial (CSR) :320545050.49
+Time taken for vector product in Parallel OpenMP (CSR): 0.012382 seconds
+FLOPS for Parallel OpenMP (CSR) :792139130.67
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.017921 seconds
+FLOPS Serial (CSR) :547310864.35
+Time taken for vector product in Parallel OpenMP (CSR): 0.011046 seconds
+FLOPS for Parallel OpenMP (CSR) :887973098.31
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.020718 seconds
+FLOPS Serial (CSR) :473422048.46
+Time taken for vector product in Parallel OpenMP (CSR): 0.011136 seconds
+FLOPS for Parallel OpenMP (CSR) :880768958.47
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.031999 seconds
+FLOPS Serial (CSR) :306520766.27
+Time taken for vector product in Parallel OpenMP (CSR): 0.011695 seconds
+FLOPS for Parallel OpenMP (CSR) :838673103.72
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.018555 seconds
+FLOPS Serial (CSR) :528609970.36
+Time taken for vector product in Parallel OpenMP (CSR): 0.011252 seconds
+FLOPS for Parallel OpenMP (CSR) :871732771.39
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$  nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000021 seconds
+FLOPS Serial (CSR) :380571428.57
+Time taken for vector product in Parallel OpenMP (CSR): 0.004971 seconds
+FLOPS for Parallel OpenMP (CSR) :1607750.59
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000016 seconds
+FLOPS Serial (CSR) :499500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005322 seconds
+FLOPS for Parallel OpenMP (CSR) :1501637.22
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000016 seconds
+FLOPS Serial (CSR) :499500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.004931 seconds
+FLOPS for Parallel OpenMP (CSR) :1620637.08
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000018 seconds
+FLOPS Serial (CSR) :444000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005416 seconds
+FLOPS for Parallel OpenMP (CSR) :1475619.32
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000016 seconds
+FLOPS Serial (CSR) :499500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005442 seconds
+FLOPS for Parallel OpenMP (CSR) :1468671.98
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000016 seconds
+FLOPS Serial (CSR) :499500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005168 seconds
+FLOPS for Parallel OpenMP (CSR) :1546447.92
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000008 seconds
+FLOPS Serial (CSR) :999000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005042 seconds
+FLOPS for Parallel OpenMP (CSR) :1585074.53
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000016 seconds
+FLOPS Serial (CSR) :499500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005272 seconds
+FLOPS for Parallel OpenMP (CSR) :1516041.94
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000024 seconds
+FLOPS Serial (CSR) :333000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.004798 seconds
+FLOPS for Parallel OpenMP (CSR) :1665640.13
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.003883 seconds
+FLOPS Serial (CSR) :655878959.57
+Time taken for vector product in Parallel OpenMP (CSR): 0.006456 seconds
+FLOPS for Parallel OpenMP (CSR) :394458454.87
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.003464 seconds
+FLOPS Serial (CSR) :735213048.50
+Time taken for vector product in Parallel OpenMP (CSR): 0.006868 seconds
+FLOPS for Parallel OpenMP (CSR) :370803758.97
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.003373 seconds
+FLOPS Serial (CSR) :755048324.93
+Time taken for vector product in Parallel OpenMP (CSR): 0.006889 seconds
+FLOPS for Parallel OpenMP (CSR) :369669797.92
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.003065 seconds
+FLOPS Serial (CSR) :830922675.37
+Time taken for vector product in Parallel OpenMP (CSR): 0.006144 seconds
+FLOPS for Parallel OpenMP (CSR) :414508790.38
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.002798 seconds
+FLOPS Serial (CSR) :910213724.09
+Time taken for vector product in Parallel OpenMP (CSR): 0.006527 seconds
+FLOPS for Parallel OpenMP (CSR) :390183794.67
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.002816 seconds
+FLOPS Serial (CSR) :904395596.59
+Time taken for vector product in Parallel OpenMP (CSR): 0.006491 seconds
+FLOPS for Parallel OpenMP (CSR) :392382294.59
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.003059 seconds
+FLOPS Serial (CSR) :832552468.13
+Time taken for vector product in Parallel OpenMP (CSR): 0.007156 seconds
+FLOPS for Parallel OpenMP (CSR) :355882981.72
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.003061 seconds
+FLOPS Serial (CSR) :832008493.96
+Time taken for vector product in Parallel OpenMP (CSR): 0.006458 seconds
+FLOPS for Parallel OpenMP (CSR) :394381882.46
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.002970 seconds
+FLOPS Serial (CSR) :857501010.10
+Time taken for vector product in Parallel OpenMP (CSR): 0.007007 seconds
+FLOPS for Parallel OpenMP (CSR) :363453752.39
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.002246 seconds
+FLOPS Serial (CSR) :362295636.69
+Time taken for vector product in Parallel OpenMP (CSR): 0.006700 seconds
+FLOPS for Parallel OpenMP (CSR) :121455622.99
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.002140 seconds
+FLOPS Serial (CSR) :380241121.50
+Time taken for vector product in Parallel OpenMP (CSR): 0.006949 seconds
+FLOPS for Parallel OpenMP (CSR) :117093296.08
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+^[[A^[[A^[[A[s387796@crescent./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001929 seconds
+FLOPS Serial (CSR) :421833074.13
+Time taken for vector product in Parallel OpenMP (CSR): 0.005678 seconds
+FLOPS for Parallel OpenMP (CSR) :143304281.50
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001718 seconds
+FLOPS Serial (CSR) :473641443.54
+Time taken for vector product in Parallel OpenMP (CSR): 0.005498 seconds
+FLOPS for Parallel OpenMP (CSR) :147989912.82
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001590 seconds
+FLOPS Serial (CSR) :511771069.18
+Time taken for vector product in Parallel OpenMP (CSR): 0.005757 seconds
+FLOPS for Parallel OpenMP (CSR) :141340341.25
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.002248 seconds
+FLOPS Serial (CSR) :361973309.61
+Time taken for vector product in Parallel OpenMP (CSR): 0.006314 seconds
+FLOPS for Parallel OpenMP (CSR) :128866553.38
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001789 seconds
+FLOPS Serial (CSR) :454844046.95
+Time taken for vector product in Parallel OpenMP (CSR): 0.005451 seconds
+FLOPS for Parallel OpenMP (CSR) :149275713.53
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001841 seconds
+FLOPS Serial (CSR) :441996740.90
+Time taken for vector product in Parallel OpenMP (CSR): 0.003009 seconds
+FLOPS for Parallel OpenMP (CSR) :270418943.44
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.002171 seconds
+FLOPS Serial (CSR) :374811607.55
+Time taken for vector product in Parallel OpenMP (CSR): 0.008664 seconds
+FLOPS for Parallel OpenMP (CSR) :93924215.29
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000081 seconds
+FLOPS Serial (CSR) :277679012.35
+Time taken for vector product in Parallel OpenMP (CSR): 0.012896 seconds
+FLOPS for Parallel OpenMP (CSR) :1744077.55
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000056 seconds
+FLOPS Serial (CSR) :401642857.14
+Time taken for vector product in Parallel OpenMP (CSR): 0.008551 seconds
+FLOPS for Parallel OpenMP (CSR) :2630446.89
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000059 seconds
+FLOPS Serial (CSR) :381220338.98
+Time taken for vector product in Parallel OpenMP (CSR): 0.007640 seconds
+FLOPS for Parallel OpenMP (CSR) :2944110.96
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000036 seconds
+FLOPS Serial (CSR) :624777777.78
+Time taken for vector product in Parallel OpenMP (CSR): 0.005035 seconds
+FLOPS for Parallel OpenMP (CSR) :4467012.83
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000059 seconds
+FLOPS Serial (CSR) :381220338.98
+Time taken for vector product in Parallel OpenMP (CSR): 0.008365 seconds
+FLOPS for Parallel OpenMP (CSR) :2688719.61
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000059 seconds
+FLOPS Serial (CSR) :381220338.98
+Time taken for vector product in Parallel OpenMP (CSR): 0.008275 seconds
+FLOPS for Parallel OpenMP (CSR) :2718059.92
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000059 seconds
+FLOPS Serial (CSR) :381220338.98
+Time taken for vector product in Parallel OpenMP (CSR): 0.007719 seconds
+FLOPS for Parallel OpenMP (CSR) :2913980.13
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000059 seconds
+FLOPS Serial (CSR) :381220338.98
+Time taken for vector product in Parallel OpenMP (CSR): 0.008538 seconds
+FLOPS for Parallel OpenMP (CSR) :2634492.53
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000059 seconds
+FLOPS Serial (CSR) :381220338.98
+Time taken for vector product in Parallel OpenMP (CSR): 0.008234 seconds
+FLOPS for Parallel OpenMP (CSR) :2731487.97
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000329 seconds
+FLOPS Serial (CSR) :621592705.17
+Time taken for vector product in Parallel OpenMP (CSR): 0.006428 seconds
+FLOPS for Parallel OpenMP (CSR) :31814982.81
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000212 seconds
+FLOPS Serial (CSR) :964641509.43
+Time taken for vector product in Parallel OpenMP (CSR): 0.007818 seconds
+FLOPS for Parallel OpenMP (CSR) :26156668.30
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000219 seconds
+FLOPS Serial (CSR) :933808219.18
+Time taken for vector product in Parallel OpenMP (CSR): 0.005859 seconds
+FLOPS for Parallel OpenMP (CSR) :34905766.53
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000204 seconds
+FLOPS Serial (CSR) :1002470588.24
+Time taken for vector product in Parallel OpenMP (CSR): 0.001101 seconds
+FLOPS for Parallel OpenMP (CSR) :185705657.72
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000252 seconds
+FLOPS Serial (CSR) :811523809.52
+Time taken for vector product in Parallel OpenMP (CSR): 0.006346 seconds
+FLOPS for Parallel OpenMP (CSR) :32224852.89
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O9 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000219 seconds
+FLOPS Serial (CSR) :933808219.18
+Time taken for vector product in Parallel OpenMP (CSR): 0.007355 seconds
+FLOPS for Parallel OpenMP (CSR) :27805294.24
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000191 seconds
+FLOPS Serial (CSR) :1070701570.68
+Time taken for vector product in Parallel OpenMP (CSR): 0.006083 seconds
+FLOPS for Parallel OpenMP (CSR) :33618600.97
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000217 seconds
+FLOPS Serial (CSR) :942414746.54
+Time taken for vector product in Parallel OpenMP (CSR): 0.006274 seconds
+FLOPS for Parallel OpenMP (CSR) :32594390.57
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000217 seconds
+FLOPS Serial (CSR) :942414746.54
+Time taken for vector product in Parallel OpenMP (CSR): 0.008276 seconds
+FLOPS for Parallel OpenMP (CSR) :24709362.94
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000223 seconds
+FLOPS Serial (CSR) :917058295.96
+Time taken for vector product in Parallel OpenMP (CSR): 0.007615 seconds
+FLOPS for Parallel OpenMP (CSR) :26854927.53
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.038701 seconds
+FLOPS Serial (CSR) :769155112.27
+Time taken for vector product in Parallel OpenMP (CSR): 0.013913 seconds
+FLOPS for Parallel OpenMP (CSR) :2139490495.77
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.023848 seconds
+FLOPS Serial (CSR) :1248199932.91
+Time taken for vector product in Parallel OpenMP (CSR): 0.013614 seconds
+FLOPS for Parallel OpenMP (CSR) :2186429723.46
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.024067 seconds
+FLOPS Serial (CSR) :1236841816.60
+Time taken for vector product in Parallel OpenMP (CSR): 0.012713 seconds
+FLOPS for Parallel OpenMP (CSR) :2341516871.52
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.024095 seconds
+FLOPS Serial (CSR) :1235404523.76
+Time taken for vector product in Parallel OpenMP (CSR): 0.012364 seconds
+FLOPS for Parallel OpenMP (CSR) :2407644509.17
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.024039 seconds
+FLOPS Serial (CSR) :1238282457.67
+Time taken for vector product in Parallel OpenMP (CSR): 0.014577 seconds
+FLOPS for Parallel OpenMP (CSR) :2042057040.12
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.024040 seconds
+FLOPS Serial (CSR) :1238230948.42
+Time taken for vector product in Parallel OpenMP (CSR): 0.013111 seconds
+FLOPS for Parallel OpenMP (CSR) :2270407533.07
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.045107 seconds
+FLOPS Serial (CSR) :659921342.59
+Time taken for vector product in Parallel OpenMP (CSR): 0.012431 seconds
+FLOPS for Parallel OpenMP (CSR) :2394644073.85
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.024110 seconds
+FLOPS Serial (CSR) :1234635918.71
+Time taken for vector product in Parallel OpenMP (CSR): 0.015300 seconds
+FLOPS for Parallel OpenMP (CSR) :1945501867.33
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.023481 seconds
+FLOPS Serial (CSR) :1267708871.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.013711 seconds
+FLOPS for Parallel OpenMP (CSR) :2171089069.89
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000044 seconds
+FLOPS Serial (CSR) :334227272.73
+Time taken for vector product in Parallel OpenMP (CSR): 0.004642 seconds
+FLOPS for Parallel OpenMP (CSR) :3168356.83
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000032 seconds
+FLOPS Serial (CSR) :459562500.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.009616 seconds
+FLOPS for Parallel OpenMP (CSR) :1529264.42
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000017 seconds
+FLOPS Serial (CSR) :865058823.53
+Time taken for vector product in Parallel OpenMP (CSR): 0.005388 seconds
+FLOPS for Parallel OpenMP (CSR) :2729306.65
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000018 seconds
+FLOPS Serial (CSR) :817000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005014 seconds
+FLOPS for Parallel OpenMP (CSR) :2933233.08
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000018 seconds
+FLOPS Serial (CSR) :817000000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.005239 seconds
+FLOPS for Parallel OpenMP (CSR) :2807016.96
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000020 seconds
+FLOPS Serial (CSR) :735300000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.004922 seconds
+FLOPS for Parallel OpenMP (CSR) :2988006.73
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000036 seconds
+FLOPS Serial (CSR) :408500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.008741 seconds
+FLOPS for Parallel OpenMP (CSR) :1682502.84
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000036 seconds
+FLOPS Serial (CSR) :408500000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.009245 seconds
+FLOPS for Parallel OpenMP (CSR) :1590706.67
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000039 seconds
+FLOPS Serial (CSR) :377076923.08
+Time taken for vector product in Parallel OpenMP (CSR): 0.009173 seconds
+FLOPS for Parallel OpenMP (CSR) :1603168.24
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.004146 seconds
+FLOPS Serial (CSR) :657060781.48
+Time taken for vector product in Parallel OpenMP (CSR): 0.008695 seconds
+FLOPS for Parallel OpenMP (CSR) :313297707.70
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.002999 seconds
+FLOPS Serial (CSR) :908360786.93
+Time taken for vector product in Parallel OpenMP (CSR): 0.005490 seconds
+FLOPS for Parallel OpenMP (CSR) :496210902.07
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O3 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003369 seconds
+FLOPS Serial (CSR) :808600178.09
+Time taken for vector product in Parallel OpenMP (CSR): 0.002605 seconds
+FLOPS for Parallel OpenMP (CSR) :1045881085.80
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003074 seconds
+FLOPS Serial (CSR) :886198438.52
+Time taken for vector product in Parallel OpenMP (CSR): 0.005725 seconds
+FLOPS for Parallel OpenMP (CSR) :475860852.93
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003096 seconds
+FLOPS Serial (CSR) :879901162.79
+Time taken for vector product in Parallel OpenMP (CSR): 0.005804 seconds
+FLOPS for Parallel OpenMP (CSR) :469371909.67
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003071 seconds
+FLOPS Serial (CSR) :887064148.49
+Time taken for vector product in Parallel OpenMP (CSR): 0.005868 seconds
+FLOPS for Parallel OpenMP (CSR) :464241964.60
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003072 seconds
+FLOPS Serial (CSR) :886775390.62
+Time taken for vector product in Parallel OpenMP (CSR): 0.005641 seconds
+FLOPS for Parallel OpenMP (CSR) :482958206.50
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003085 seconds
+FLOPS Serial (CSR) :883038573.74
+Time taken for vector product in Parallel OpenMP (CSR): 0.006136 seconds
+FLOPS for Parallel OpenMP (CSR) :443994539.76
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003069 seconds
+FLOPS Serial (CSR) :887642228.74
+Time taken for vector product in Parallel OpenMP (CSR): 0.006337 seconds
+FLOPS for Parallel OpenMP (CSR) :429886000.91
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003407 seconds
+FLOPS Serial (CSR) :799581449.96
+Time taken for vector product in Parallel OpenMP (CSR): 0.002468 seconds
+FLOPS for Parallel OpenMP (CSR) :1103942697.16
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.012173 seconds
+FLOPS Serial (CSR) :510233467.51
+Time taken for vector product in Parallel OpenMP (CSR): 0.008582 seconds
+FLOPS for Parallel OpenMP (CSR) :723695656.21
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.010141 seconds
+FLOPS Serial (CSR) :612471353.91
+Time taken for vector product in Parallel OpenMP (CSR): 0.006188 seconds
+FLOPS for Parallel OpenMP (CSR) :1003765429.67
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+^[[ATime taken for vector product in serial (CSR): 0.010838 seconds
+FLOPS Serial (CSR) :573082856.62
+Time taken for vector product in Parallel OpenMP (CSR): 0.016290 seconds
+FLOPS for Parallel OpenMP (CSR) :381278188.33
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.010761 seconds
+FLOPS Serial (CSR) :577183533.13
+Time taken for vector product in Parallel OpenMP (CSR): 0.008273 seconds
+FLOPS for Parallel OpenMP (CSR) :750756744.54
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.010148 seconds
+FLOPS Serial (CSR) :612048876.63
+Time taken for vector product in Parallel OpenMP (CSR): 0.010810 seconds
+FLOPS for Parallel OpenMP (CSR) :574542607.84
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O9 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.010946 seconds
+FLOPS Serial (CSR) :567428467.02
+Time taken for vector product in Parallel OpenMP (CSR): 0.008563 seconds
+FLOPS for Parallel OpenMP (CSR) :725318297.68
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.010132 seconds
+FLOPS Serial (CSR) :613015396.76
+Time taken for vector product in Parallel OpenMP (CSR): 0.009010 seconds
+FLOPS for Parallel OpenMP (CSR) :689383792.48
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.010115 seconds
+FLOPS Serial (CSR) :614045674.74
+Time taken for vector product in Parallel OpenMP (CSR): 0.008252 seconds
+FLOPS for Parallel OpenMP (CSR) :752641832.67
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.010117 seconds
+FLOPS Serial (CSR) :613924285.86
+Time taken for vector product in Parallel OpenMP (CSR): 0.009222 seconds
+FLOPS for Parallel OpenMP (CSR) :673506923.10
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.010259 seconds
+FLOPS Serial (CSR) :605426649.77
+Time taken for vector product in Parallel OpenMP (CSR): 0.009302 seconds
+FLOPS for Parallel OpenMP (CSR) :667720926.79
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000314 seconds
+FLOPS Serial (CSR) :486414012.74
+Time taken for vector product in Parallel OpenMP (CSR): 0.008257 seconds
+FLOPS for Parallel OpenMP (CSR) :18498481.71
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000133 seconds
+FLOPS Serial (CSR) :1148375939.85
+Time taken for vector product in Parallel OpenMP (CSR): 0.006284 seconds
+FLOPS for Parallel OpenMP (CSR) :24305311.90
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000134 seconds
+FLOPS Serial (CSR) :1139805970.15
+Time taken for vector product in Parallel OpenMP (CSR): 0.005399 seconds
+FLOPS for Parallel OpenMP (CSR) :28286834.60
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000157 seconds
+FLOPS Serial (CSR) :972828025.48
+Time taken for vector product in Parallel OpenMP (CSR): 0.008072 seconds
+FLOPS for Parallel OpenMP (CSR) :18922148.96
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000156 seconds
+FLOPS Serial (CSR) :979064102.56
+Time taken for vector product in Parallel OpenMP (CSR): 0.006216 seconds
+FLOPS for Parallel OpenMP (CSR) :24570938.13
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000165 seconds
+FLOPS Serial (CSR) :925660606.06
+Time taken for vector product in Parallel OpenMP (CSR): 0.010373 seconds
+FLOPS for Parallel OpenMP (CSR) :14724430.97
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000141 seconds
+FLOPS Serial (CSR) :1083219858.16
+Time taken for vector product in Parallel OpenMP (CSR): 0.006166 seconds
+FLOPS for Parallel OpenMP (CSR) :24770185.52
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000155 seconds
+FLOPS Serial (CSR) :985380645.16
+Time taken for vector product in Parallel OpenMP (CSR): 0.006323 seconds
+FLOPS for Parallel OpenMP (CSR) :24156133.45
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000141 seconds
+FLOPS Serial (CSR) :1083219858.16
+Time taken for vector product in Parallel OpenMP (CSR): 0.005970 seconds
+FLOPS for Parallel OpenMP (CSR) :25585698.78
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001093 seconds
+FLOPS Serial (CSR) :538473924.98
+Time taken for vector product in Parallel OpenMP (CSR): 0.004937 seconds
+FLOPS for Parallel OpenMP (CSR) :119214869.69
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000554 seconds
+FLOPS Serial (CSR) :1062368231.05
+Time taken for vector product in Parallel OpenMP (CSR): 0.005579 seconds
+FLOPS for Parallel OpenMP (CSR) :105485839.06
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000455 seconds
+FLOPS Serial (CSR) :1293520879.12
+Time taken for vector product in Parallel OpenMP (CSR): 0.006167 seconds
+FLOPS for Parallel OpenMP (CSR) :95432417.79
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000404 seconds
+FLOPS Serial (CSR) :1456811881.19
+Time taken for vector product in Parallel OpenMP (CSR): 0.005607 seconds
+FLOPS for Parallel OpenMP (CSR) :104970786.71
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000440 seconds
+FLOPS Serial (CSR) :1337618181.82
+Time taken for vector product in Parallel OpenMP (CSR): 0.005604 seconds
+FLOPS for Parallel OpenMP (CSR) :105014883.98
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000385 seconds
+FLOPS Serial (CSR) :1528706493.51
+Time taken for vector product in Parallel OpenMP (CSR): 0.007331 seconds
+FLOPS for Parallel OpenMP (CSR) :80278977.28
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000452 seconds
+FLOPS Serial (CSR) :1302106194.69
+Time taken for vector product in Parallel OpenMP (CSR): 0.005895 seconds
+FLOPS for Parallel OpenMP (CSR) :99832483.46
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000514 seconds
+FLOPS Serial (CSR) :1145042801.56
+Time taken for vector product in Parallel OpenMP (CSR): 0.006551 seconds
+FLOPS for Parallel OpenMP (CSR) :89843628.87
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000457 seconds
+FLOPS Serial (CSR) :1287859956.24
+Time taken for vector product in Parallel OpenMP (CSR): 0.009174 seconds
+FLOPS for Parallel OpenMP (CSR) :64153896.57
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.002663 seconds
+FLOPS Serial (CSR) :575588434.10
+Time taken for vector product in Parallel OpenMP (CSR): 0.003557 seconds
+FLOPS for Parallel OpenMP (CSR) :430969253.06
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.002056 seconds
+FLOPS Serial (CSR) :745521400.78
+Time taken for vector product in Parallel OpenMP (CSR): 0.005899 seconds
+FLOPS for Parallel OpenMP (CSR) :259824733.29
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001784 seconds
+FLOPS Serial (CSR) :859188340.81
+Time taken for vector product in Parallel OpenMP (CSR): 0.005501 seconds
+FLOPS for Parallel OpenMP (CSR) :278661333.14
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.002019 seconds
+FLOPS Serial (CSR) :759183754.33
+Time taken for vector product in Parallel OpenMP (CSR): 0.005613 seconds
+FLOPS for Parallel OpenMP (CSR) :273089067.30
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001745 seconds
+FLOPS Serial (CSR) :878390830.95
+Time taken for vector product in Parallel OpenMP (CSR): 0.005508 seconds
+FLOPS for Parallel OpenMP (CSR) :278260773.94
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.003352 seconds
+FLOPS Serial (CSR) :457276849.64
+Time taken for vector product in Parallel OpenMP (CSR): 0.006479 seconds
+FLOPS for Parallel OpenMP (CSR) :236579207.93
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001716 seconds
+FLOPS Serial (CSR) :893235431.24
+Time taken for vector product in Parallel OpenMP (CSR): 0.005917 seconds
+FLOPS for Parallel OpenMP (CSR) :259041110.74
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001622 seconds
+FLOPS Serial (CSR) :945001233.05
+Time taken for vector product in Parallel OpenMP (CSR): 0.005255 seconds
+FLOPS for Parallel OpenMP (CSR) :291686117.97
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001676 seconds
+FLOPS Serial (CSR) :914553699.28
+Time taken for vector product in Parallel OpenMP (CSR): 0.005619 seconds
+FLOPS for Parallel OpenMP (CSR) :272786483.63
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000151 seconds
+FLOPS Serial (CSR) :754092715.23
+Time taken for vector product in Parallel OpenMP (CSR): 0.005084 seconds
+FLOPS for Parallel OpenMP (CSR) :22396149.25
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000074 seconds
+FLOPS Serial (CSR) :1538756756.76
+Time taken for vector product in Parallel OpenMP (CSR): 0.005013 seconds
+FLOPS for Parallel OpenMP (CSR) :22715123.56
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000077 seconds
+FLOPS Serial (CSR) :1478805194.81
+Time taken for vector product in Parallel OpenMP (CSR): 0.004981 seconds
+FLOPS for Parallel OpenMP (CSR) :22861491.51
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000085 seconds
+FLOPS Serial (CSR) :1339623529.41
+Time taken for vector product in Parallel OpenMP (CSR): 0.005009 seconds
+FLOPS for Parallel OpenMP (CSR) :22732105.50
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000077 seconds
+FLOPS Serial (CSR) :1478805194.81
+Time taken for vector product in Parallel OpenMP (CSR): 0.004846 seconds
+FLOPS for Parallel OpenMP (CSR) :23495185.56
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000077 seconds
+FLOPS Serial (CSR) :1478805194.81
+Time taken for vector product in Parallel OpenMP (CSR): 0.004987 seconds
+FLOPS for Parallel OpenMP (CSR) :22832865.40
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000078 seconds
+FLOPS Serial (CSR) :1459846153.85
+Time taken for vector product in Parallel OpenMP (CSR): 0.005080 seconds
+FLOPS for Parallel OpenMP (CSR) :22413775.00
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000075 seconds
+FLOPS Serial (CSR) :1518240000.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.004821 seconds
+FLOPS for Parallel OpenMP (CSR) :23618040.72
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000088 seconds
+FLOPS Serial (CSR) :1293954545.45
+Time taken for vector product in Parallel OpenMP (CSR): 0.008704 seconds
+FLOPS for Parallel OpenMP (CSR) :13082035.44
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001158 seconds
+FLOPS Serial (CSR) :836366148.53
+Time taken for vector product in Parallel OpenMP (CSR): 0.007563 seconds
+FLOPS for Parallel OpenMP (CSR) :128065991.98
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000707 seconds
+FLOPS Serial (CSR) :1369889674.68
+Time taken for vector product in Parallel OpenMP (CSR): 0.005383 seconds
+FLOPS for Parallel OpenMP (CSR) :179920248.83
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000805 seconds
+FLOPS Serial (CSR) :1203120496.89
+Time taken for vector product in Parallel OpenMP (CSR): 0.007597 seconds
+FLOPS for Parallel OpenMP (CSR) :127488357.83
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000841 seconds
+FLOPS Serial (CSR) :1151619500.59
+Time taken for vector product in Parallel OpenMP (CSR): 0.005117 seconds
+FLOPS for Parallel OpenMP (CSR) :189257588.72
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000843 seconds
+FLOPS Serial (CSR) :1148887307.24
+Time taken for vector product in Parallel OpenMP (CSR): 0.005416 seconds
+FLOPS for Parallel OpenMP (CSR) :178831934.50
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000846 seconds
+FLOPS Serial (CSR) :1144813238.77
+Time taken for vector product in Parallel OpenMP (CSR): 0.005150 seconds
+FLOPS for Parallel OpenMP (CSR) :188060357.85
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000758 seconds
+FLOPS Serial (CSR) :1277720316.62
+Time taken for vector product in Parallel OpenMP (CSR): 0.007519 seconds
+FLOPS for Parallel OpenMP (CSR) :128801850.19
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000761 seconds
+FLOPS Serial (CSR) :1272683311.43
+Time taken for vector product in Parallel OpenMP (CSR): 0.005479 seconds
+FLOPS for Parallel OpenMP (CSR) :176755297.94
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.000858 seconds
+FLOPS Serial (CSR) :1128801864.80
+Time taken for vector product in Parallel OpenMP (CSR): 0.005144 seconds
+FLOPS for Parallel OpenMP (CSR) :188296367.75
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.005439 seconds
+FLOPS Serial (CSR) :454082368.08
+Time taken for vector product in Parallel OpenMP (CSR): 0.006726 seconds
+FLOPS for Parallel OpenMP (CSR) :367178057.80
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.005498 seconds
+FLOPS Serial (CSR) :449209530.74
+Time taken for vector product in Parallel OpenMP (CSR): 0.009660 seconds
+FLOPS for Parallel OpenMP (CSR) :255679406.18
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.005621 seconds
+FLOPS Serial (CSR) :439379825.65
+Time taken for vector product in Parallel OpenMP (CSR): 0.006733 seconds
+FLOPS for Parallel OpenMP (CSR) :366801876.64
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.005643 seconds
+FLOPS Serial (CSR) :437666843.88
+Time taken for vector product in Parallel OpenMP (CSR): 0.006610 seconds
+FLOPS for Parallel OpenMP (CSR) :373654270.62
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.005670 seconds
+FLOPS Serial (CSR) :435582716.05
+Time taken for vector product in Parallel OpenMP (CSR): 0.006777 seconds
+FLOPS for Parallel OpenMP (CSR) :364418550.47
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.005724 seconds
+FLOPS Serial (CSR) :431473445.14
+Time taken for vector product in Parallel OpenMP (CSR): 0.009272 seconds
+FLOPS for Parallel OpenMP (CSR) :266356562.44
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.006648 seconds
+FLOPS Serial (CSR) :371503309.27
+Time taken for vector product in Parallel OpenMP (CSR): 0.008097 seconds
+FLOPS for Parallel OpenMP (CSR) :305011874.94
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.006179 seconds
+FLOPS Serial (CSR) :399701246.16
+Time taken for vector product in Parallel OpenMP (CSR): 0.007207 seconds
+FLOPS for Parallel OpenMP (CSR) :342709358.88
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - Pattern 
+Time taken for vector product in serial (CSR): 0.006634 seconds
+FLOPS Serial (CSR) :372287307.81
+Time taken for vector product in Parallel OpenMP (CSR): 0.007045 seconds
+FLOPS for Parallel OpenMP (CSR) :350544812.22
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Segmentation fault (core dumped)
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.005701 seconds
+FLOPS Serial (CSR) :713880722.68
+Time taken for vector product in Parallel OpenMP (CSR): 0.006403 seconds
+FLOPS for Parallel OpenMP (CSR) :635638479.47
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003095 seconds
+FLOPS Serial (CSR) :1314970597.74
+Time taken for vector product in Parallel OpenMP (CSR): 0.005581 seconds
+FLOPS for Parallel OpenMP (CSR) :729235249.35
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003259 seconds
+FLOPS Serial (CSR) :1248798404.42
+Time taken for vector product in Parallel OpenMP (CSR): 0.008491 seconds
+FLOPS for Parallel OpenMP (CSR) :479300982.96
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003358 seconds
+FLOPS Serial (CSR) :1211981536.63
+Time taken for vector product in Parallel OpenMP (CSR): 0.008028 seconds
+FLOPS for Parallel OpenMP (CSR) :506951871.00
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003285 seconds
+FLOPS Serial (CSR) :1238914459.67
+Time taken for vector product in Parallel OpenMP (CSR): 0.008064 seconds
+FLOPS for Parallel OpenMP (CSR) :504662403.34
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003264 seconds
+FLOPS Serial (CSR) :1246885416.67
+Time taken for vector product in Parallel OpenMP (CSR): 0.005644 seconds
+FLOPS for Parallel OpenMP (CSR) :721044060.83
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003346 seconds
+FLOPS Serial (CSR) :1216328153.02
+Time taken for vector product in Parallel OpenMP (CSR): 0.008122 seconds
+FLOPS for Parallel OpenMP (CSR) :501090598.95
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003369 seconds
+FLOPS Serial (CSR) :1208024339.57
+Time taken for vector product in Parallel OpenMP (CSR): 0.006243 seconds
+FLOPS for Parallel OpenMP (CSR) :651922556.48
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.003714 seconds
+FLOPS Serial (CSR) :1095808831.45
+Time taken for vector product in Parallel OpenMP (CSR): 0.005554 seconds
+FLOPS for Parallel OpenMP (CSR) :732806888.55
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001442 seconds
+FLOPS Serial (CSR) :683167822.47
+Time taken for vector product in Parallel OpenMP (CSR): 0.008154 seconds
+FLOPS for Parallel OpenMP (CSR) :120810997.89
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001224 seconds
+FLOPS Serial (CSR) :804843137.25
+Time taken for vector product in Parallel OpenMP (CSR): 0.005870 seconds
+FLOPS for Parallel OpenMP (CSR) :167835414.87
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001267 seconds
+FLOPS Serial (CSR) :777528018.94
+Time taken for vector product in Parallel OpenMP (CSR): 0.008117 seconds
+FLOPS for Parallel OpenMP (CSR) :121361223.29
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001263 seconds
+FLOPS Serial (CSR) :779990498.81
+Time taken for vector product in Parallel OpenMP (CSR): 0.005862 seconds
+FLOPS for Parallel OpenMP (CSR) :168046271.18
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001861 seconds
+FLOPS Serial (CSR) :529354110.69
+Time taken for vector product in Parallel OpenMP (CSR): 0.006446 seconds
+FLOPS for Parallel OpenMP (CSR) :152832631.53
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001314 seconds
+FLOPS Serial (CSR) :749716894.98
+Time taken for vector product in Parallel OpenMP (CSR): 0.005661 seconds
+FLOPS for Parallel OpenMP (CSR) :174024159.27
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001342 seconds
+FLOPS Serial (CSR) :734074515.65
+Time taken for vector product in Parallel OpenMP (CSR): 0.008229 seconds
+FLOPS for Parallel OpenMP (CSR) :119712765.32
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001278 seconds
+FLOPS Serial (CSR) :770835680.75
+Time taken for vector product in Parallel OpenMP (CSR): 0.005597 seconds
+FLOPS for Parallel OpenMP (CSR) :175994308.34
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.001256 seconds
+FLOPS Serial (CSR) :784337579.62
+Time taken for vector product in Parallel OpenMP (CSR): 0.005954 seconds
+FLOPS for Parallel OpenMP (CSR) :165452406.14
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.026134 seconds
+FLOPS Serial (CSR) :690835692.97
+Time taken for vector product in Parallel OpenMP (CSR): 0.015063 seconds
+FLOPS for Parallel OpenMP (CSR) :1198585427.34
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.014265 seconds
+FLOPS Serial (CSR) :1265636172.45
+Time taken for vector product in Parallel OpenMP (CSR): 0.013081 seconds
+FLOPS for Parallel OpenMP (CSR) :1380182111.87
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.021471 seconds
+FLOPS Serial (CSR) :840869079.22
+Time taken for vector product in Parallel OpenMP (CSR): 0.013274 seconds
+FLOPS for Parallel OpenMP (CSR) :1360079822.30
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.013914 seconds
+FLOPS Serial (CSR) :1297563605.00
+Time taken for vector product in Parallel OpenMP (CSR): 0.009247 seconds
+FLOPS for Parallel OpenMP (CSR) :1952513481.36
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.017155 seconds
+FLOPS Serial (CSR) :1052422034.39
+Time taken for vector product in Parallel OpenMP (CSR): 0.014913 seconds
+FLOPS for Parallel OpenMP (CSR) :1210622278.29
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.014584 seconds
+FLOPS Serial (CSR) :1237952550.74
+Time taken for vector product in Parallel OpenMP (CSR): 0.009709 seconds
+FLOPS for Parallel OpenMP (CSR) :1859588601.48
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.015240 seconds
+FLOPS Serial (CSR) :1184665354.33
+Time taken for vector product in Parallel OpenMP (CSR): 0.011565 seconds
+FLOPS for Parallel OpenMP (CSR) :1561171781.63
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.015925 seconds
+FLOPS Serial (CSR) :1133708006.28
+Time taken for vector product in Parallel OpenMP (CSR): 0.012869 seconds
+FLOPS for Parallel OpenMP (CSR) :1402883177.34
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.014796 seconds
+FLOPS Serial (CSR) :1220214922.95
+Time taken for vector product in Parallel OpenMP (CSR): 0.015555 seconds
+FLOPS for Parallel OpenMP (CSR) :1160638268.53
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001314 seconds
+FLOPS Serial (CSR) :784856925.42
+Time taken for vector product in Parallel OpenMP (CSR): 0.005115 seconds
+FLOPS for Parallel OpenMP (CSR) :201641258.70
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001259 seconds
+FLOPS Serial (CSR) :819143764.89
+Time taken for vector product in Parallel OpenMP (CSR): 0.005414 seconds
+FLOPS for Parallel OpenMP (CSR) :190499471.27
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.001084 seconds
+FLOPS Serial (CSR) :951385608.86
+Time taken for vector product in Parallel OpenMP (CSR): 0.005604 seconds
+FLOPS for Parallel OpenMP (CSR) :184020513.77
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000736 seconds
+FLOPS Serial (CSR) :1401225543.48
+Time taken for vector product in Parallel OpenMP (CSR): 0.006617 seconds
+FLOPS for Parallel OpenMP (CSR) :155850236.92
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000683 seconds
+FLOPS Serial (CSR) :1509959004.39
+Time taken for vector product in Parallel OpenMP (CSR): 0.007747 seconds
+FLOPS for Parallel OpenMP (CSR) :133124388.16
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000712 seconds
+FLOPS Serial (CSR) :1448457865.17
+Time taken for vector product in Parallel OpenMP (CSR): 0.005434 seconds
+FLOPS for Parallel OpenMP (CSR) :189769921.96
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000717 seconds
+FLOPS Serial (CSR) :1438357043.24
+Time taken for vector product in Parallel OpenMP (CSR): 0.005427 seconds
+FLOPS for Parallel OpenMP (CSR) :190017863.31
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000717 seconds
+FLOPS Serial (CSR) :1438357043.24
+Time taken for vector product in Parallel OpenMP (CSR): 0.005198 seconds
+FLOPS for Parallel OpenMP (CSR) :198400986.31
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.000696 seconds
+FLOPS Serial (CSR) :1481755747.13
+Time taken for vector product in Parallel OpenMP (CSR): 0.004754 seconds
+FLOPS for Parallel OpenMP (CSR) :216951492.10
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.024108 seconds
+FLOPS Serial (CSR) :679038991.21
+Time taken for vector product in Parallel OpenMP (CSR): 0.008641 seconds
+FLOPS for Parallel OpenMP (CSR) :1894506943.99
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.012685 seconds
+FLOPS Serial (CSR) :1290522033.90
+Time taken for vector product in Parallel OpenMP (CSR): 0.008312 seconds
+FLOPS for Parallel OpenMP (CSR) :1969378737.28
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.012721 seconds
+FLOPS Serial (CSR) :1286869900.17
+Time taken for vector product in Parallel OpenMP (CSR): 0.007986 seconds
+FLOPS for Parallel OpenMP (CSR) :2049795546.52
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.012578 seconds
+FLOPS Serial (CSR) :1301500397.52
+Time taken for vector product in Parallel OpenMP (CSR): 0.010015 seconds
+FLOPS for Parallel OpenMP (CSR) :1634550768.61
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.012951 seconds
+FLOPS Serial (CSR) :1264016060.54
+Time taken for vector product in Parallel OpenMP (CSR): 0.008319 seconds
+FLOPS for Parallel OpenMP (CSR) :1967905020.42
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.012857 seconds
+FLOPS Serial (CSR) :1273257525.08
+Time taken for vector product in Parallel OpenMP (CSR): 0.007585 seconds
+FLOPS for Parallel OpenMP (CSR) :2158235887.55
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.013423 seconds
+FLOPS Serial (CSR) :1219568799.82
+Time taken for vector product in Parallel OpenMP (CSR): 0.007942 seconds
+FLOPS for Parallel OpenMP (CSR) :2061146102.40
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.012599 seconds
+FLOPS Serial (CSR) :1299331058.02
+Time taken for vector product in Parallel OpenMP (CSR): 0.008005 seconds
+FLOPS for Parallel OpenMP (CSR) :2044998091.60
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Time taken for vector product in serial (CSR): 0.012639 seconds
+FLOPS Serial (CSR) :1295218925.55
+Time taken for vector product in Parallel OpenMP (CSR): 0.008278 seconds
+FLOPS for Parallel OpenMP (CSR) :1977446823.55
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ nano csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O1 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.012072 seconds
+FLOPS Serial (CSR) :255450298.21
+Time taken for vector product in Parallel OpenMP (CSR): 0.009753 seconds
+FLOPS for Parallel OpenMP (CSR) :316195398.43
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O2 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.011009 seconds
+FLOPS Serial (CSR) :280115905.17
+Time taken for vector product in Parallel OpenMP (CSR): 0.010415 seconds
+FLOPS for Parallel OpenMP (CSR) :296087795.29
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O3 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O4 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.011331 seconds
+FLOPS Serial (CSR) :272155679.11
+Time taken for vector product in Parallel OpenMP (CSR): 0.009301 seconds
+FLOPS for Parallel OpenMP (CSR) :331556867.21
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O6 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.011353 seconds
+FLOPS Serial (CSR) :271628292.08
+Time taken for vector product in Parallel OpenMP (CSR): 0.009447 seconds
+FLOPS for Parallel OpenMP (CSR) :326417861.68
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O8 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.012554 seconds
+FLOPS Serial (CSR) :245642504.38
+Time taken for vector product in Parallel OpenMP (CSR): 0.009678 seconds
+FLOPS for Parallel OpenMP (CSR) :318644443.22
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O10 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.012116 seconds
+FLOPS Serial (CSR) :254522614.72
+Time taken for vector product in Parallel OpenMP (CSR): 0.009451 seconds
+FLOPS for Parallel OpenMP (CSR) :326292093.23
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O12 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.011165 seconds
+FLOPS Serial (CSR) :276202060.01
+Time taken for vector product in Parallel OpenMP (CSR): 0.009670 seconds
+FLOPS for Parallel OpenMP (CSR) :318893382.99
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O14 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.010607 seconds
+FLOPS Serial (CSR) :290732158.01
+Time taken for vector product in Parallel OpenMP (CSR): 0.009444 seconds
+FLOPS for Parallel OpenMP (CSR) :326535708.76
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ gcc -fopenmp -O16 -o csrparallelopenmp3 csrparallelopenmp3.c
+[s387796@crescent-login2 ~]$ ./csrparallelopenmp3
+Matrix Market - symmetric 
+Time taken for vector product in serial (CSR): 0.011656 seconds
+FLOPS Serial (CSR) :264567261.50
+Time taken for vector product in Parallel OpenMP (CSR): 0.006332 seconds
+FLOPS for Parallel OpenMP (CSR) :487013549.79
+
+VECTOR RESULT VALIDATED SUCESSFULLY
+[s387796@crescent-login2 ~]$ 
